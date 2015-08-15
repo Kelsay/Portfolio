@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Umbraco.Web.Mvc;
 
-namespace Training.Controllers
+namespace Kelsay.Controllers
 {
     public class HomeController : RenderMvcController
     {
