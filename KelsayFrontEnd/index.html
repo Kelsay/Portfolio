@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html class="no-js" lang="en" ng-app="App">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Krzysztof Fijolek - portfolio</title>
+    <meta name="description" content="Trains">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/build/main.css">
+
+    <base href="/">
+
+</head>
+<body>
+
+    <div class="main container">
+
+        <!-- Main Menu -->
+        <ng-include src="'build/templates/menu.html'"></ng-include>
+
+        <!-- Main View -->
+        <main ui-view class="view">
+            <div class="loading">Loading ..</div>
+        </main>
+
+    </div>
+
+    <script src="/build/main.js"></script>
+
+</body>
+</html>
