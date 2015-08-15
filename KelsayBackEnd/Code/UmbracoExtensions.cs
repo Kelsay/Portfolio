@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Models;
@@ -118,6 +120,17 @@ namespace Kelsay.Code
             string host = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
             return host + page.GetCropUrl(fieldName, cropName);
         }
+
+        /*
+        public static T MapTo<T>(this IPublishedContent page) where T : new()
+        {
+            PropertyInfo[] properties = typeof(T).GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+            }
+            return new T();
+        }
+         * */
 
     }
 }
