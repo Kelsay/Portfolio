@@ -5,7 +5,7 @@
     $stateProvider.state("article", {
         url: "/article",
         controller: "ArticleController",
-        templateUrl: "build/templates/article-view.html",
+        templateUrl: "build/templates/article.html",
         params: {
             id: ""
         }

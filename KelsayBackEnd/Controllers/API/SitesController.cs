@@ -17,7 +17,7 @@ namespace Kelsay.Controllers
 
         public HttpResponseMessage GetAll()
         {
-            List<SiteModel> model = new List<SiteModel>();
+            List<PortfolioModel> model = new List<PortfolioModel>();
             IEnumerable<IPublishedContent> sites = Umbraco.GetAllNodes("Site");
             if (sites.Any())
             {
@@ -28,7 +28,7 @@ namespace Kelsay.Controllers
                     string thumbnail = images.Any() ? images.ElementAt(0) : "";
 
                     // Get page data to model
-                    model.Add(new SiteModel()
+                    model.Add(new PortfolioModel()
                     {
                         Name = site.Name,
                         Thumbnail = thumbnail,

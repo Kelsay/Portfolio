@@ -225,12 +225,12 @@
     <Compile Include="Controllers\API\ArticlesController.cs" />
     <Compile Include="Controllers\API\MasterController.cs" />
     <Compile Include="Controllers\API\MenuController.cs" />
-    <Compile Include="Controllers\API\SitesController.cs" />
+    <Compile Include="Controllers\API\PortfolioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\JobModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
-    <Compile Include="Models\SiteModel.cs" />
+    <Compile Include="Models\PortfolioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

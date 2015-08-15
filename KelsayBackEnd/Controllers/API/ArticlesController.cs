@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using Umbraco.Core.Models;
-using Kelsay.Code;  
+using Kelsay.Code;
 
 namespace Kelsay.Controllers.API
 {
@@ -30,7 +30,7 @@ namespace Kelsay.Controllers.API
                     Heading = page.GetString("heading"),
                     Body = page.GetString("body").ChangeUrlsToAbsolute()
                 };
-                
+
                 return Json(model);
             }
             catch
