@@ -1,0 +1,10 @@
+packages/
+KelsayFrontEnd/node_modules/
+KelsayFrontEnd/bower_components/
+KelsayFrontEnd/build/
+KelsayFrontEnd/obj/
+KelsayBackEnd/App_Data
+KelsayBackEnd/App_Data/Logs
+KelsayBackEnd/App_Data/ExamineIndexes
+KelsayBackEnd/App_Browsers
+KelsayBackEnd/obj
