@@ -211,9 +211,11 @@
   <ItemGroup>
     <Compile Include="Code\UmbracoExtensions.cs" />
     <Compile Include="Controllers\API\MasterController.cs" />
+    <Compile Include="Controllers\API\MenuController.cs" />
     <Compile Include="Controllers\API\SitesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\SiteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
