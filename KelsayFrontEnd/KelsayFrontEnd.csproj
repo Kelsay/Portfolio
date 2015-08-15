@@ -58,6 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\components\app.js" />
+    <Content Include="app\components\article\article-controller.js" />
+    <Content Include="app\components\article\article-view.html" />
+    <Content Include="app\components\menu\menu-controller.js" />
+    <Content Include="app\components\menu\menu-view.html" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
@@ -76,7 +80,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\components\menu\" />
     <Folder Include="app\images\" />
     <Folder Include="app\styles\" />
   </ItemGroup>

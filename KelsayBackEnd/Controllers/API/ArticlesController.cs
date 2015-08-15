@@ -12,6 +12,12 @@ namespace Kelsay.Controllers.API
 {
     public class ArticlesController : MasterController
     {
+
+        public HttpResponseMessage GetAll()
+        {
+            return Json("");
+        }
+
         public HttpResponseMessage GetById(int id)
         {
             try
@@ -20,7 +26,8 @@ namespace Kelsay.Controllers.API
                 ArticleModel model = new ArticleModel()
                 {
                     Id = page.Id,
-                    Name = page.Name,
+                    Alias = page.GetString("alias"),
+                    Heading = page.GetString("heading"),
                     Body = page.GetString("body").ChangeUrlsToAbsolute()
                 };
                 

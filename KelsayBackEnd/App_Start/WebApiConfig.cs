@@ -13,7 +13,7 @@ namespace Kelsay.App_Start
         public static void Register(HttpConfiguration config)
         {
             // Enable CORS
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://kelsay.local", "*", "*");
+            EnableCorsAttribute cors = new EnableCorsAttribute("http://fijolek.local", "*", "*");
             config.EnableCors(cors);
 
             // Route config

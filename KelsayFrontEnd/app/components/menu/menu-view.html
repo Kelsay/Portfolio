@@ -1,0 +1,5 @@
+﻿<menu ng-controller="MenuController">
+    <a ng-repeat="item in items" ui-sref="{{ item.action }}({id: {{ item.id }}})">
+        {{ item.name }}
+    </a>
+</menu>

@@ -1,3 +1,6 @@
+'use strict';
+// The Main Application module
+
 var app = angular.module("App", ['ngAnimate', 'restangular', 'ui.router'])
 
     .config(['RestangularProvider', function (RestangularProvider) {
