@@ -1,18 +1,7 @@
-﻿body {
-    margin: 90px 0 0 0;
-    padding: 0;
-    overflow-y: scroll; // prevents jumping when scrollbar (dis)appears
-    overflow-x: hidden;
-    background: url(/build/images/grid.png), url(/build/images/bg.jpg) fixed no-repeat center 90px;
-}
+﻿// Main Site Menu
 
-
-// MENU
-
-
-// Wrapper
-.menu-bar { 
-    height: 90px;
+// Fixed menu bar
+.menu-bar {
     background: #fff;
     box-shadow: 0 0 25px rgba(0,0,0,0.75);
     position: fixed;
@@ -20,6 +9,11 @@
     left: 0;
     right: 0;
     z-index: 999;
+    height: 50px;
+
+    @include breakpoint($tablet) {
+        height: 90px;
+    }
 }
 
 // A list of links
@@ -55,48 +49,13 @@
             bottom: 0;
             background: #463e36;
             z-index: -1;
+            border-radius: 50px;
         }
 
         &.active:after {
             transform: scale(1);
             opacity: 1;
+            border-radius: 2px;
         }
-    }
-}
-
-// Main wrapper and background for articles
-.main-container {
-    @extend .transparent-container;
-    font-size: 18px;
-}
-
-.main-title {
-    font-size: 48px;
-    color: #ffeee4;
-    margin: 150px 0;
-    padding: 0;
-}
-
-
-// A semi-tranparent container
-.transparent-container {
-    background: rgba(255,255,255,0.8);
-    padding: 40px 30px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    position: relative;
-    border-radius: 2px;
-    overflow: hidden;
-
-    &:before {
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url(/build/images/bg.jpg) fixed no-repeat center 90px;
-        filter: blur(5px);
-        z-index: -10;
     }
 }

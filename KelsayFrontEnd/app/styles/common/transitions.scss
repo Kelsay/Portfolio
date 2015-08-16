@@ -8,12 +8,12 @@
     position: absolute;
     //transform: translateX(300px);
     //transform: scaleY(0.1);    
-    transform: translateY(-200px);
+    //transform: translateY(-100px);
 }
 
 .view.ng-leave-active {
     opacity: 0;
     //transform: scaleY(0.1);
     //transform: translateX(-300px);
-    transform: translateY(-200px);
+    //transform: translateY(-100px);
 }

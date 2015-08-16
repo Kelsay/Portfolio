@@ -70,8 +70,10 @@
     <Content Include="app\components\menu\menu.html" />
     <Content Include="app\components\portfolio\portfolio-controller.js" />
     <Content Include="app\components\portfolio\portfolio.html" />
-    <Content Include="app\styles\layout\text.scss" />
-    <None Include="app\styles\layout\transitions.scss" />
+    <None Include="app\styles\common\breakpoints.scss" />
+    <Content Include="app\styles\common\typography.scss" />
+    <None Include="app\styles\common\transitions.scss" />
+    <None Include="app\styles\modules\homepage.scss" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
@@ -84,7 +86,9 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="package.json" />
-    <Content Include="app\styles\layout\main.scss" />
+    <Content Include="app\styles\modules\layout.scss" />
+    <Content Include="app\styles\modules\portfolio.scss" />
+    <Content Include="app\styles\modules\menu.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\images\" />
-    <Folder Include="app\styles\modules\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

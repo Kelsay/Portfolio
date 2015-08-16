@@ -38,7 +38,7 @@ var config = {
 
     // SCSS files - order
     styles: [
-        "app/styles/layout/*.scss",
+        "app/styles/common/*.scss",
         "app/styles/modules/*.scss"
     ],
 
