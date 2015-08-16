@@ -8,7 +8,7 @@ using Umbraco.Core.Models;
 using Kelsay.Code;
 using Kelsay.Models;
 
-namespace Kelsay.Controllers.API
+namespace Kelsay.Controllers
 {
     /// <summary>
     /// Pages API
@@ -30,7 +30,7 @@ namespace Kelsay.Controllers.API
                         {
                             Action = page.DocumentTypeAlias.ToLower(),
                             Name = page.Name,
-                            Url = page.Url.TrimStart('/').TrimEnd('/')
+                            Url = page.RawUrl()
                         });
                     }
                 }
@@ -47,8 +47,7 @@ namespace Kelsay.Controllers.API
         {
             try
             {
-                string url = "/" + id + "/";
-                IPublishedContent page = Umbraco.GetRoot().Children.Where(x => x.Url.Equals(url)).FirstOrDefault();
+                IPublishedContent page = Umbraco.GetRoot().Children.Where(x => x.RawUrl().Equals(id)).FirstOrDefault();
                 PageFullModel model = new PageFullModel
                 {
                     Name = page.Name,

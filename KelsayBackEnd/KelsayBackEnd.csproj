@@ -228,7 +228,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\JobModel.cs" />
-    <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -23,7 +23,7 @@
 
         // Check if we should be in child state (after URL reload)
         var callback = function (data) {
-            $scope.article = data;
+            $scope.page = data;
             var state = 'page.' + data.action;
             if (!$state.is(state)) {
                 $state.go(state,{url: data.url});

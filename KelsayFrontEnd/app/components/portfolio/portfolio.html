@@ -1,11 +1,13 @@
 ﻿<!-- Portfolio -->
-PORTFOLIO {{ test }}
+<div class="loading" ng-show="items.length < 1">Loading ..</div>
 <ul class="portfolio">
-    <li ng-repeat="item in page.items">
-        {{ item.name }}
-        <img ng-src="{{ item.thumbnail }}" />
-        <div class="hover">
-            {{ item.url }}
+    <li ng-repeat="item in items" class="item">
+        <div class="frame">
+            <img class="image" ng-src=" {{ item.thumbnail }}" />
+            <div class="menu">
+                <h3 class="title" ng-bind="item.name"></h3>
+                <h4 class="subtitle" ng-bind-html="item.heading | trusted"></h4>
+            </div>
         </div>
     </li>
 </ul>

@@ -13,8 +13,7 @@
 
 
 .controller("PortfolioController", ['$scope', '$stateParams', 'Restangular', function ($scope, $stateParams, Restangular) {
-    
-    $scope.test = "Dupa";
-    $scope.portfolio = Restangular.one("portfolio", $stateParams.id).get().$object;
+
+    $scope.items = Restangular.one("pages", $stateParams.url).all("portfolio").getList().$object;
 
 }]);

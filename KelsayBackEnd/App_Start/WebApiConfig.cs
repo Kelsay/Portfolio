@@ -19,17 +19,25 @@ namespace Kelsay.App_Start
             // Route config
             // List all - eg. api.com/sites
             config.Routes.MapHttpRoute(
-                name: "GetAll", 
+                name: "GetAll",
                 routeTemplate: "{controller}",
-                defaults: new { action = "GetAll", id = RouteParameter.Optional }
+                defaults: new { action = "GetAll" }
             );
 
             // List specific eg. sites/1234
             config.Routes.MapHttpRoute(
-                name: "GetById",
+                name: "GetSingle",
                 routeTemplate: "{controller}/{id}",
-                defaults: new { action = "GetSingle", id = RouteParameter.Optional }
+                defaults: new { action = "GetSingle" }
             );
+
+            // Child controller
+            config.Routes.MapHttpRoute(
+                name: "GetAllChildren",
+                routeTemplate: "{parentController}/{parentId}/{controller}",
+                defaults: new {  action = "GetAll" }
+            );
+
 
         }
     }

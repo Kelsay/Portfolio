@@ -121,6 +121,17 @@ namespace Kelsay.Code
             return host + page.GetCropUrl(fieldName, cropName);
         }
 
+        /// <summary>
+        /// Returns url without leading and trailing slashes
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public static string RawUrl(this IPublishedContent page)
+        {
+            return page.Url.TrimStart('/').TrimEnd('/');
+        }
+
+
         /*
         public static T MapTo<T>(this IPublishedContent page) where T : new()
         {

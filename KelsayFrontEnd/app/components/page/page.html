@@ -1,7 +1,6 @@
-﻿<h1 class="main-title" ng-bind-html="article.heading | trusted">Loading ..</h1>
+﻿<h1 class="main-title" ng-bind-html="page.heading | trusted">Loading ..</h1>
 
-<section class="main-container page-{{ article.action }} page-{{ article.url }}">
-    ARTICLE
-    <article ng-bind-html="article.body | trusted">Loading ..</article>
+<section class="main-container page-type-{{ page.action }} page-id-{{ page.url }}">
+    <article ng-bind-html="page.body | trusted">Loading ..</article>
     <div ui-view></div>
 </section>

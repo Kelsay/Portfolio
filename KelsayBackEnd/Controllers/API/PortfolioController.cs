@@ -15,42 +15,28 @@ namespace Kelsay.Controllers
 {
 
     public class PortfolioController : MasterController
-    {
+    { 
 
-        public HttpResponseMessage GetAll()
-        {
-            return Json("");
-        }
-
-        public HttpResponseMessage GetSingle(int id)
+        public HttpResponseMessage GetAll(string parentId)
         {
             try
             {
-                IPublishedContent page = Umbraco.TypedContent(id);
-                PortfolioModel model = new PortfolioModel()
+                List<PortfolioModel> model = new List<PortfolioModel>();
+                IPublishedContent page = Umbraco.GetRoot().Children().Where(x => x.RawUrl().Equals(parentId)).FirstOrDefault();
+                if (page.Children().Any())
                 {
-                    Id = page.Id,
-                    Alias = page.GetString("alias"),
-                    Heading = page.GetString("heading"),
-                    Body = page.GetString("body"),
-                    Items = new List<PortfolioItemModel>()
-                };
-
-                // Portfolio items 
-                IEnumerable<IPublishedContent> items = page.Descendants("Site");
-                if (items.Any())
-                {
-                    foreach (IPublishedContent item in items)
+                    foreach (IPublishedContent portfolio in page.Children())
                     {
-                        // Get first image as thumbnail
-                        IEnumerable<string> images = item.GetImagesAsList("image");
+                        IEnumerable<string> images = portfolio.GetImagesAsList("image");
                         string thumbnail = images.Any() ? images.ElementAt(0) : "";
-                        model.Items.Add(new PortfolioItemModel()
+                        model.Add(new PortfolioModel
                         {
-                            Name = item.Name,
+                            Name = portfolio.Name,
+                            Heading = portfolio.GetString("heading"),
+                            Responsive = portfolio.GetPropertyValue<bool>("responsive"),
                             Thumbnail = thumbnail,
-                            Responsive = item.GetPropertyValue<bool>("responsive"),
-                            Url = item.GetString("url")
+                            Url = portfolio.GetString("url"),
+                            Slogan = portfolio.GetString("slogan")
                         });
                     }
                 }
@@ -61,6 +47,11 @@ namespace Kelsay.Controllers
             {
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
+        }
+
+        public HttpResponseMessage GetSingle(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 
