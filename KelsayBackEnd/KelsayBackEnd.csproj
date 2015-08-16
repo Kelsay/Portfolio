@@ -222,14 +222,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\UmbracoExtensions.cs" />
-    <Compile Include="Controllers\API\ArticlesController.cs" />
     <Compile Include="Controllers\API\MasterController.cs" />
-    <Compile Include="Controllers\API\MenuController.cs" />
+    <Compile Include="Controllers\API\PagesController.cs" />
     <Compile Include="Controllers\API\PortfolioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\JobModel.cs" />
     <Compile Include="Models\MenuModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

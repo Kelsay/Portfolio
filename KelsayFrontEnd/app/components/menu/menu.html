@@ -1,5 +1,10 @@
-﻿<menu ng-controller="MenuController">
-    <a ng-repeat="item in items" ui-sref="{{ item.action }}({id: {{ item.id }}})">
-        {{ item.name }}
-    </a>
-</menu>
+﻿<div class="menu-bar" ng-controller="MenuController">
+    <div class="container">
+        <img ui-sref="home" src="build/images/logo.png" class="logo" />
+        <menu class="main-menu">
+            <a ng-repeat="item in items" ui-sref="{{ item | item }}" ui-sref-active="active">
+                {{ item.name }}
+            </a>
+        </menu>
+    </div>
+</div>

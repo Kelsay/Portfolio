@@ -19,17 +19,19 @@
 </head>
 <body>
 
-    <div class="main container">
+    <!-- Main Menu -->
+    <ng-include src="'build/templates/menu.html'">
+        <div class="loading">Loading ..</div>
+    </ng-include>
 
-        <!-- Main Menu -->
-        <ng-include src="'build/templates/menu.html'"></ng-include>
+    <main class="container">
 
         <!-- Main View -->
-        <main ui-view class="view">
+        <div ui-view class="view">
             <div class="loading">Loading ..</div>
-        </main>
+        </div>
 
-    </div>
+    </main>
 
     <script src="/build/main.js"></script>
 

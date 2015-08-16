@@ -2,6 +2,6 @@
 
     .controller("MenuController", ["$scope","Restangular", function ($scope,Restangular) {
 
-        $scope.items = Restangular.all("menu").getList().$object;
+        $scope.items = Restangular.all("pages").getList().$object;
 
     }])

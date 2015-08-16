@@ -5,10 +5,17 @@ using System.Web;
 
 namespace Kelsay.Models
 {
-    public class MenuModel
+    public class PageModel
     {
         public string Name;
-        public int Id;
+        public string Url;
         public string Action;
     }
+
+    public class PageFullModel : PageModel
+    {
+        public string Heading;
+        public string Body;
+    }
+
 }

@@ -22,7 +22,7 @@ namespace Kelsay.Controllers
             return Json("");
         }
 
-        public HttpResponseMessage GetById(int id)
+        public HttpResponseMessage GetSingle(int id)
         {
             try
             {

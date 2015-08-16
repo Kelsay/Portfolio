@@ -1,15 +1,11 @@
-﻿<h1 class="title" ng-bind-html="page.heading | trusted"></h1>
-
-<section class="main container">
-
-    <ul class="portfolio">
-        <li ng-repeat="item in page.items">
-            {{ item.name }}
-            <img ng-src="{{ item.thumbnail }}" />
-            <div class="hover">
-
-            </div>
-        </li>
-    </ul>
-
-</section>
+﻿<!-- Portfolio -->
+PORTFOLIO {{ test }}
+<ul class="portfolio">
+    <li ng-repeat="item in page.items">
+        {{ item.name }}
+        <img ng-src="{{ item.thumbnail }}" />
+        <div class="hover">
+            {{ item.url }}
+        </div>
+    </li>
+</ul>

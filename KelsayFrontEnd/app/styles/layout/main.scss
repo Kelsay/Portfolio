@@ -1,0 +1,102 @@
+﻿body {
+    margin: 90px 0 0 0;
+    padding: 0;
+    overflow-y: scroll; // prevents jumping when scrollbar (dis)appears
+    overflow-x: hidden;
+    background: url(/build/images/grid.png), url(/build/images/bg.jpg) fixed no-repeat center 90px;
+}
+
+
+// MENU
+
+
+// Wrapper
+.menu-bar { 
+    height: 90px;
+    background: #fff;
+    box-shadow: 0 0 25px rgba(0,0,0,0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+// A list of links
+.main-menu {
+    float: right;
+    margin: 24px 0 0 0;
+    // Single main menu item
+    a {
+        position: relative;
+        display: inline-block;
+        color: #463e36;
+        transition: all 200ms linear;
+        padding: 8px 20px;
+        margin: 0 0 0 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-decoration: none;
+
+        &.active {
+            color: #fffafa;
+        }
+        // Effect
+        &:after {
+            transform: scale(0) rotateY(30deg);
+            opacity: 0;
+            transition: all 300ms cubic-bezier(0.64, 0.57, 0.67, 1.3);
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #463e36;
+            z-index: -1;
+        }
+
+        &.active:after {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+// Main wrapper and background for articles
+.main-container {
+    @extend .transparent-container;
+    font-size: 18px;
+}
+
+.main-title {
+    font-size: 48px;
+    color: #ffeee4;
+    margin: 150px 0;
+    padding: 0;
+}
+
+
+// A semi-tranparent container
+.transparent-container {
+    background: rgba(255,255,255,0.8);
+    padding: 40px 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(/build/images/bg.jpg) fixed no-repeat center 90px;
+        filter: blur(5px);
+        z-index: -10;
+    }
+}

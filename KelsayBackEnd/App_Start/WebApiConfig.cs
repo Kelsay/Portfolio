@@ -22,13 +22,13 @@ namespace Kelsay.App_Start
                 name: "GetAll", 
                 routeTemplate: "{controller}",
                 defaults: new { action = "GetAll", id = RouteParameter.Optional }
-            ); 
+            );
 
             // List specific eg. sites/1234
             config.Routes.MapHttpRoute(
                 name: "GetById",
                 routeTemplate: "{controller}/{id}",
-                defaults: new { action = "GetById", id = RouteParameter.Optional }
+                defaults: new { action = "GetSingle", id = RouteParameter.Optional }
             );
 
         }
