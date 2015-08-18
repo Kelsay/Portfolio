@@ -1,0 +1,64 @@
+
+.job {
+    
+    font-family: Roboto;
+    font-weight: 300;
+    color: #444;
+    position: relative;
+    @include breakpoint($tablet) { padding: 0 0 20px 150px; }
+    @include breakpoint($normal) { padding: 0 0 40px 150px; }
+
+    .side {
+        float: left;
+        padding: 0 10px 10px 0;
+        @include breakpoint($tablet) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 150px;
+        }
+    }
+    
+    .logo {
+        width: 52px;
+        @include breakpoint($tablet) {
+            width: auto;
+        }
+    }
+    
+    .title {
+        background: #bb9b72;
+        color: #fff;
+        padding: 6px 8px;
+        border-radius: 2px;
+        display: inline-block;
+        //text-transform: uppercase;
+        margin-top: 0;
+    }
+    
+    .location { 
+        color: #705635;
+        padding: 0 0 20px 0;
+    }
+    
+    .role {
+        color: #805621;
+        font-weight: 300;
+        strong { font-weight: 400; }
+    }
+    
+    .date {
+        display: none;
+        width: 128px;
+        text-align: center;
+        @include breakpoint($tablet) {
+            display: block;
+            padding: 20px 0 0 0;
+        }
+        b { display: block; }
+    }
+    
+    b, strong {
+        font-weight: 400;
+    }
+}

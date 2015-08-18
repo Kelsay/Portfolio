@@ -1,6 +1,6 @@
 ﻿angular.module("App")
 
-.config(["$stateProvider", function ($stateProvider) {
+.config(["$stateProvider","$urlRouterProvider", function ($stateProvider,$urlRouterProvider) {
 
     $stateProvider.state("page", {
         url: "/:url/",
@@ -12,6 +12,8 @@
     });
 
     $stateProvider.state("page.article", {});
+
+    $urlRouterProvider.when("/","/start/")
 
 }])
 
@@ -28,6 +30,7 @@
             if (!$state.is(state)) {
                 $state.go(state,{url: data.url});
             }
+            angular.element(document.querySelectorAll("body")).removeClass('nav-active');
         }
 
     }]);

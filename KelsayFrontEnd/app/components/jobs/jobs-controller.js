@@ -1,5 +1,5 @@
-﻿angular.module("App")
-
+﻿/* angular.module("App")
+    
 .config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider.state("jobs", {
@@ -11,4 +11,4 @@
         }
     });
 
-}])
+}]) */

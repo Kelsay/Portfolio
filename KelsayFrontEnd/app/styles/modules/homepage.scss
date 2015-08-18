@@ -1,1 +1,36 @@
-﻿
+﻿.page-id-start {
+
+    padding-top: 10px;
+    @include breakpoint($tablet) { padding-top: 80px; }
+
+    .main-container {
+        box-shadow: none !important;
+        background: transparent !important;
+        &:before {
+            display: none !important;
+        }
+    }
+
+    .box {
+        display: table;
+        text-align: center;
+        padding: 10px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        font-weight: 100;
+        font-size: 1em;
+        margin: 0 auto 1em auto;
+        vertical-align: baseline;
+        line-height: 150%;
+        @include breakpoint($narrow) { padding: 20px; }
+        @include breakpoint($tablet) { padding: 0.5em 1em 0.5em 1em; font-size: 2em; }
+        @include breakpoint($normal) { margin: 0 auto 1em auto; }
+
+        strong { 
+            font-weight: 400; 
+            vertical-align: baseline; 
+            color: #ffeee4;
+        }
+    
+    }
+}

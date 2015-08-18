@@ -60,8 +60,6 @@
     <Content Include="app\components\app.js" />
     <Content Include="app\components\jobs\jobs-controller.js" />
     <Content Include="app\components\jobs\jobs.html" />
-    <Content Include="app\components\home\home-controller.js" />
-    <Content Include="app\components\home\home.html" />
     <Content Include="app\components\page\page-controller.js" />
     <Content Include="app\components\page\page.html" />
     <Content Include="app\components\common\filter-item.js" />
@@ -70,9 +68,11 @@
     <Content Include="app\components\menu\menu.html" />
     <Content Include="app\components\portfolio\portfolio-controller.js" />
     <Content Include="app\components\portfolio\portfolio.html" />
+    <Content Include="app\styles\common\common.scss" />
     <None Include="app\styles\common\breakpoints.scss" />
     <Content Include="app\styles\common\typography.scss" />
     <None Include="app\styles\common\transitions.scss" />
+    <Content Include="app\styles\modules\experience.scss" />
     <None Include="app\styles\modules\homepage.scss" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
@@ -88,7 +88,8 @@
     <Content Include="package.json" />
     <Content Include="app\styles\modules\layout.scss" />
     <Content Include="app\styles\modules\portfolio.scss" />
-    <Content Include="app\styles\modules\menu.scss" />
+    <Content Include="app\styles\modules\navigation.scss" />
+    <Content Include="app\styles\modules\skills.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

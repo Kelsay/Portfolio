@@ -1,0 +1,30 @@
+.page-id-skills {
+
+    .item {
+    }
+
+    .title {
+        color: #bb9b72;
+        text-align: center;
+    }
+
+    .icon {
+        width: 64px;
+        height: 64px;
+        display: block;
+        margin: 0 auto 1.5em auto;
+        border-radius: 50%;
+        background: #bb9b72;
+
+        @include breakpoint($tablet) {
+            width: 96px;
+            height: 96px;
+        }
+    }
+
+    .copy {
+        ul {
+            list-style: none;
+        }
+    }
+}

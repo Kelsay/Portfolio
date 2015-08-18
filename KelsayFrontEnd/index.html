@@ -11,7 +11,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:100,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/build/main.css">
 
     <base href="/">
@@ -19,19 +19,21 @@
 </head>
 <body>
 
-    <!-- Main Menu -->
-    <ng-include src="'build/templates/menu.html'">
-        <div class="loading">Loading ..</div>
-    </ng-include>
-
-    <main class="container">
-
-        <!-- Main View -->
-        <div ui-view class="view">
+    <div class="wrapper">
+        <!-- Main Menu -->
+        <ng-include src="'build/templates/menu.html'">
             <div class="loading">Loading ..</div>
-        </div>
+        </ng-include>
 
-    </main>
+        <main class="container">
+
+            <!-- Main View -->
+            <div ui-view class="view">
+                <div class="loading">Loading ..</div>
+            </div>
+
+        </main>
+    </div>
 
     <script src="/build/main.js"></script>
 
