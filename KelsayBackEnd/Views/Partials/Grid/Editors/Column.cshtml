@@ -1,0 +1,22 @@
+﻿@using Lecoati.LeBlender.Extension.Models;
+@using Kelsay.Code;
+@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
+
+@if (Model.Items.Any())
+{
+    foreach (LeBlenderValue item in Model.Items)
+    {
+        string icon = item.GetValue("icon");
+        <div class="item">
+            @if (!string.IsNullOrEmpty(icon))
+            {
+                string url = Umbraco.TypedMedia(icon).GetAbsoluteUrl();
+                <img src="@url" class="icon"/>
+            }
+            <h2 class="title">@Html.Raw(item.GetValue("title"))</h2>
+            <div class="copy">@Html.Raw(item.GetValue("body"))</div>
+        </div>
+    }
+
+}
+

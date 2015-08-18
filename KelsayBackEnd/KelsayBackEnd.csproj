@@ -82,6 +82,10 @@
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Lecoati.LeBlender.Extension, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Lecoati.LeBlender.1.0.8\lib\Lecoati.LeBlender.Extension.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\UmbracoCms.Core.7.2.8\lib\log4net.dll</HintPath>
     </Reference>
@@ -260,6 +264,8 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
+    <Content Include="Views\Partials\Grid\Editors\Column.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Experience.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

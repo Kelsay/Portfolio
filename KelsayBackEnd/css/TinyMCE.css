@@ -1,0 +1,33 @@
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
+div.box {
+border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
+}
+
+div.columns.columns-3 {
+border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
+}
+
+div.column {
+border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
+}
+
+div.col-md-4 {
+border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
+}
+
+img.icon {
+border-radius: 50%; background: #ccc;
+}
+
+div.item.col-md-4 {
+border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
+}
+
+h3.title {
+color: #900;
+}
+
+h4.role {
+color: #2980b9
+}
+

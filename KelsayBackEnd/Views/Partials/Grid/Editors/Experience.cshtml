@@ -1,0 +1,32 @@
+@using Lecoati.LeBlender.Extension.Models;
+@using Kelsay.Code;
+@inherits UmbracoViewPage<Lecoati.LeBlender.Extension.Models.LeBlenderModel>
+
+@if (Model.Items.Any())
+{
+    foreach (LeBlenderValue item in Model.Items)
+    {
+        string icon = item.GetImage("icon");
+
+        <div class="job">
+
+            <div class="side">
+                @if (!string.IsNullOrEmpty(icon))
+                {
+                    <img src="@icon" class="logo" />
+                }
+                <div class="date">
+                    <b>@item.GetValue("dateEnd")</b>
+                    @item.GetValue("dateStart")
+
+                </div>
+            </div>
+            <h3 class="title">@item.GetValue("name")</h3>
+            <div class="location">@item.GetValue("location")</div>
+            <div class="description">
+                @Html.Raw(item.GetValue("description"))
+            </div>
+        </div>
+
+    }
+}

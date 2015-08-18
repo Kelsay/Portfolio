@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web;
+using Umbraco.Core;
 using Umbraco.Core.Models;
+using Umbraco.Web;
 using Kelsay.Code;
 using Kelsay.Models;
 
@@ -48,11 +50,14 @@ namespace Kelsay.Controllers
             try
             {
                 IPublishedContent page = Umbraco.GetRoot().Children.Where(x => x.RawUrl().Equals(id)).FirstOrDefault();
+                HttpContext.Current.Items.Add("id", page.Id.ToString());
+
                 PageFullModel model = new PageFullModel
                 {
                     Name = page.Name,
                     Heading = page.GetString("heading"),
-                    Body = page.GetString("body").ChangeUrlsToAbsolute(),
+                    Body = page.GetString("body").ChangeUrlsToAbsolute() 
+                         + page.GetGridHtml("layout").ToString().ChangeUrlsToAbsolute(),
                     Url = id,
                     Action = page.DocumentTypeAlias.ToLower()
                 };
