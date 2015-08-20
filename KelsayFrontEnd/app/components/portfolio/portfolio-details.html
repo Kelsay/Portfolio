@@ -1,0 +1,11 @@
+﻿<div class="portfolio-details">
+    <a ng-click="close()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
+    <h2 ng-bind="item.name" class="title"></h2>
+    <h5 ng-bind-html="item.heading | trusted" class="heading"></h5>
+    <a href="{{item.siteUrl}}" ng-show="item.siteUrl" class="online" target="_blank">See online &raquo;</a>
+    <span ng-show="!item.siteUrl" class="offline">No online access</span>
+    <div class="copy" ng-bind-html="item.description | trusted"></div>
+
+    <img ng-repeat="image in item.images" ng-src="{{image}}" ng-if="$index >= 1 || item.images.length <= 1" />
+
+</div>

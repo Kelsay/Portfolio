@@ -1,13 +1,16 @@
 ﻿<!-- Portfolio -->
 <div class="loading" ng-show="items.length < 1">Loading ..</div>
 <ul class="portfolio">
-    <li ng-repeat="item in items" class="item">
+    <li ng-repeat="item in items track by $index" class="item">
         <div class="frame">
             <img class="image" ng-src=" {{ item.thumbnail }}" />
-            <div class="menu">
+            <div class="menu" ui-sref="page.sites.details({ item: '{{ item.url }}', num: {{$index}} })">
                 <h3 class="title" ng-bind="item.name"></h3>
                 <h4 class="subtitle" ng-bind-html="item.heading | trusted"></h4>
             </div>
         </div>
     </li>
 </ul>
+
+
+<div ui-view></div>

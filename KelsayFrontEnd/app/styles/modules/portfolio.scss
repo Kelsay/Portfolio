@@ -1,19 +1,35 @@
 ﻿.portfolio {
     list-style: none;
     padding: 0;
-    
     margin: 0 -10px;
+
     @include breakpoint($normal) {
         margin: 0 -20px;
     }
 
     .item {
         padding: 0 10px 20px 10px;
-        display: inline-block;  
+        display: inline-block;
         width: 100%;
-        @include breakpoint($narrow) { width: 50%; }
-        @include breakpoint($normal) { width: 33%; padding: 0 20px 40px 20px; }
-        @include breakpoint($wide) { width: 25%; }
+        transition: all 100ms linear;
+
+        @include breakpoint($narrow) {
+            width: 50%;
+        }
+
+        @include breakpoint($normal) {
+            width: 33%;
+            padding: 0 20px 40px 20px;
+        }
+
+        @include breakpoint($wide) {
+            width: 25%;
+        }
+
+        .ng-enter & {
+            transform: scale(0);
+            transition-delay: 50ms;
+        }
     }
 
     .frame {
@@ -30,7 +46,7 @@
                 border-radius: 0;
             }
 
-            .title, 
+            .title,
             .subtitle {
                 opacity: 1;
                 transform: scale(1);
@@ -76,5 +92,57 @@
         @include breakpoint($tablet) {
             font-size: 18px;
         }
+    }
+}
+
+.portfolio-details {
+    padding: 20px;
+
+    .title {
+        color: #463e36;
+        font-weight: 400;
+        @include breakpoint($tablet) {
+            font-size: 24px;
+        }
+    }
+
+    .heading {
+        color: #6c797e;
+
+        @include breakpoint($tablet) {
+            font-size: 18px;
+        }
+    }
+
+    .online,
+    .offline {
+        font-weight: 100;
+        background: #2980b9;
+        color: #fff;
+        padding: 4px 12px;
+        display: inline-block;
+        font-size: 1em;
+        margin: 0 0 20px 0;
+    }
+
+    .offline {
+        text-decoration: line-through;
+        background: #e0f0f6;
+        color: #777;
+    }
+
+    .close {
+        float: right;
+    }
+
+    .copy {
+        @include breakpoint($tablet) {
+            font-size: 18px;
+        }
+    }
+
+    img {
+        width: 100%;
+        padding: 0 0 20px 0;
     }
 }

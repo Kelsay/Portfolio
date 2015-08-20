@@ -60,12 +60,14 @@
     <Content Include="app\components\app.js" />
     <Content Include="app\components\jobs\jobs-controller.js" />
     <Content Include="app\components\jobs\jobs.html" />
+    <Content Include="app\components\menu\menu-directive.js" />
     <Content Include="app\components\page\page-controller.js" />
     <Content Include="app\components\page\page.html" />
     <Content Include="app\components\common\filter-item.js" />
     <Content Include="app\components\common\filter-trusted.js" />
     <Content Include="app\components\menu\menu-controller.js" />
     <Content Include="app\components\menu\menu.html" />
+    <Content Include="app\components\portfolio\portfolio-details.html" />
     <Content Include="app\components\portfolio\portfolio-controller.js" />
     <Content Include="app\components\portfolio\portfolio.html" />
     <Content Include="app\styles\common\common.scss" />

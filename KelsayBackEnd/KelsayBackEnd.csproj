@@ -231,6 +231,7 @@
     <Compile Include="Controllers\API\PortfolioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\JobModel.cs" />
     <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />

@@ -31,12 +31,21 @@ namespace Kelsay.App_Start
                 defaults: new { action = "GetSingle" }
             );
 
-            // Child controller
+            // Child controller - list
             config.Routes.MapHttpRoute(
                 name: "GetAllChildren",
                 routeTemplate: "{parentController}/{parentId}/{controller}",
                 defaults: new {  action = "GetAll" }
             );
+
+            config.MapHttpAttributeRoutes();
+
+            // Child controller - single
+            /* config.Routes.MapHttpRoute(
+                name: "GetSingleChild",
+                routeTemplate: "{parentController}/{parentId}/{controller}/{id}",
+                defaults: new { action = "GetSingle" }
+            ); */
 
 
         }

@@ -13,12 +13,13 @@ namespace Kelsay.Models
         public string Slogan;
         public string Thumbnail;
         public bool Responsive;
+        public string SiteUrl;
         public string Url;
     }
 
     public class PortfolioFullModel : PortfolioModel
     {
         public string Description;
-        public List<string> Images;
+        public IEnumerable<string> Images;
     }
 }
