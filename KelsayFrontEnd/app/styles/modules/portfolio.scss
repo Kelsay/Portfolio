@@ -3,7 +3,11 @@
     padding: 0;
     margin: 0 -10px;
 
-    @include breakpoint($normal) {
+    @include breakpoint($tablet) {
+        margin: 0 -10px;
+    }
+
+    @include breakpoint($xwide) {
         margin: 0 -20px;
     }
 
@@ -18,12 +22,13 @@
         }
 
         @include breakpoint($normal) {
-            width: 33%;
-            padding: 0 20px 40px 20px;
+            width: 33.33%;
+            padding: 0 10px 20px 10px;
         }
 
-        @include breakpoint($wide) {
+        @include breakpoint($xwide) {
             width: 25%;
+            padding: 0 20px 40px 20px;
         }
 
         .ng-enter & {
@@ -101,6 +106,7 @@
     .title {
         color: #463e36;
         font-weight: 400;
+
         @include breakpoint($tablet) {
             font-size: 24px;
         }

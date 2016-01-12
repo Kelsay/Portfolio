@@ -15,6 +15,7 @@
         margin: 0 auto 1.5em auto;
         border-radius: 50%;
         background: #bb9b72;
+        transition: all 300ms linear;
 
         @include breakpoint($tablet) {
             width: 96px;

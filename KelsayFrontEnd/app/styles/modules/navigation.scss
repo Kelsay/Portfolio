@@ -9,10 +9,11 @@
     right: 0;
     z-index: 999;
     height: 50px;
-    transition: all 200ms linear;
+    position: fixed;
+    transition: height 300ms linear;
 
     @include breakpoint($tablet) {
-        position: fixed;
+        //position: fixed;
         height: 90px;
     }
     // Main Site Logo
@@ -21,7 +22,7 @@
         margin: 10px 0 10px 20px;
         width: auto;
         cursor: pointer;
-        transition: all 200ms linear;
+        transition: width 300ms linear, margin 300ms linear;
 
         @include breakpoint($tablet) {
             max-width: 174px;
@@ -50,7 +51,6 @@
     position: absolute;
     top: 0px;
     left: 100%;
-    bottom: 0;
     width: 250px;
     overflow: hidden;
     transition: all 300ms ease-in-out;
@@ -83,7 +83,7 @@
         border-top: 1px solid rgba(255,255,255,0.5);
         border-bottom: 1px solid rgba(0,0,0,0.1);
 
-        @include breakpoint($tablet) {
+        @include breakpoint($normal) {
             display: inline-block;
             margin: 0 0 0 20px;
             border: 0;
@@ -92,11 +92,10 @@
         &.active {
             color: #db532a;
 
-            @include breakpoint($tablet) {
+            @include breakpoint($normal) {
                 color: #fffafa;
             }
         }
-
         // Effect on active
         &:after {
             transform: scale(0) rotateY(30deg);
@@ -133,12 +132,15 @@
 // Menu Activation
 
 .wrapper {
-    transition: all 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, background 300ms linear;
 }
 
 .nav-active {
 
     .wrapper {
         transform: translateX(-250px);
+        @include breakpoint($normal) {
+            transform: none;
+        }
     }
 }

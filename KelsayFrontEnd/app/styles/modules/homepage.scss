@@ -22,9 +22,11 @@
         margin: 0 auto 1em auto;
         vertical-align: baseline;
         line-height: 150%;
+        transition: all 300ms linear;
         @include breakpoint($narrow) { padding: 20px; }
         @include breakpoint($tablet) { padding: 0.5em 1em 0.5em 1em; font-size: 2em; }
         @include breakpoint($normal) { margin: 0 auto 1em auto; }
+
 
         strong { 
             font-weight: 400; 

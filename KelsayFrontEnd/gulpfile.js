@@ -102,7 +102,7 @@ gulp.task('styles', function () {
 
 gulp.task("templates", function () {
     return gulp.src(config.sources.templates)
-        .pipe($.compressor())
+        //.pipe($.compressor())
         .pipe($.flatten())
         .pipe(gulp.dest(config.targets.templates))
         .pipe($.livereload())

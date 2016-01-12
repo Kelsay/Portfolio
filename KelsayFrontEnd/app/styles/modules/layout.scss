@@ -15,6 +15,8 @@ body, html {
 .wrapper {
     background: #463e36;
     min-height: 100%;
+    background: url(/build/images/grid.png), url(/build/images/bg.jpg) fixed no-repeat center 50px;
+    padding: 50px 0 90px 0;
 
     @include breakpoint($tablet) {
         padding: 90px 0 90px 0;
@@ -26,8 +28,8 @@ body, html {
 .main-title {
     padding: 0;
     color: #ffeee4;
-    transition: all 500ms linear;
-    margin: 30px 10px;
+    transition: all 300ms linear;
+    margin: 50px 10px;
 
     @include breakpoint($normal) {
         font-size: 48px;
@@ -40,23 +42,25 @@ body, html {
     @extend .transparent-container;
     font-size: 18px;
     padding: 10px;
-
-    @include breakpoint($normal) {
-        margin: 0;
-        padding: 20px;
-    }
-
-    @include breakpoint($wide) {
-        padding: 40px;
-    }
+    min-height: 100px;
+    @include breakpoint($narrow) { padding: 10px; margin: 40px 0 0 0; }
+    @include breakpoint($tablet) { padding: 20px; margin: 40px 0 0 0; }
+    @include breakpoint($wide) { padding: 40px; }
 }
 
 
 // Bootstrap changes
 .container {
     padding: 0;
+    transition: width 300ms linear;
 
     @include breakpoint($xxwide) {
         width: 1480px;
     }
+}
+
+
+.modal-open {
+    //overflow-x: hidden;
+    //overflow-y: scroll;
 }
