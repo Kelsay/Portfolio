@@ -30,3 +30,23 @@
         }
     }
 }
+
+// A loading icon
+.loading {
+    font-size: 16px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+
+    .main-container &,
+    .menu-bar &  {
+        color: #666;
+    }
+
+    icon {
+        display: inline-block;
+        background: url('/build/images/loading.gif');
+        width: 16px;
+        height: 11px;
+    }
+}

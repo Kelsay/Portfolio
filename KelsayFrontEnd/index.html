@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Krzysztof Fijolek - portfolio</title>
-    <meta name="description" content="Trains">
+    <meta name="description" content="Krzysztof Fijolek - Full Stack Web Developer - London, UK">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -22,14 +22,20 @@
     <div class="wrapper">
         <!-- Main Menu -->
         <ng-include src="'build/templates/menu.html'">
-            <div class="loading">Loading ..</div>
+            <div class="menu-bar">
+                <div class="loading" ng-show="isLoading">
+                    <icon></icon> Loading ..
+                </div>
+            </div>
         </ng-include>
 
         <main class="container">
 
             <!-- Main View -->
             <div ui-view class="view">
-                <div class="loading">Loading ..</div>
+                <div class="loading" ng-show="isLoading">
+                    <icon></icon> Loading ..
+                </div>
             </div>
 
         </main>

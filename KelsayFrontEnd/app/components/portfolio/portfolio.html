@@ -1,5 +1,8 @@
 ﻿<!-- Portfolio -->
-<div class="loading" ng-show="items.length < 1">Loading ..</div>
+
+<div class="loading" ng-hide="items.length">
+    <icon></icon> Loading ..
+</div>
 <ul class="portfolio">
     <li ng-repeat="item in items track by $index" class="item">
         <div class="frame">

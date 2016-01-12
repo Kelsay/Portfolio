@@ -2,7 +2,10 @@
     <h1 class="main-title" ng-bind-html="page.heading | trusted" ng-show="page.heading">Loading ..</h1>
 
     <div class="main-container">
-        <article ng-bind-html="page.body | trusted">Loading ..</article>
+        <div class="loading" ng-show="isLoading">
+            <icon></icon> Loading ..
+        </div>
+        <article ng-bind-html="page.body | trusted"></article>
         <div ui-view></div>
     </div>
 </section>

@@ -1,6 +1,6 @@
 ﻿angular.module("App")
 
-.config(["$stateProvider","$urlRouterProvider", function ($stateProvider,$urlRouterProvider) {
+.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state("page", {
         url: "/:url/",
@@ -13,7 +13,7 @@
 
     $stateProvider.state("page.article", {});
 
-    $urlRouterProvider.when("/","/start/")
+    $urlRouterProvider.when("/", "/start/")
 
 }])
 
@@ -23,13 +23,17 @@
 
         var page = Restangular.one("pages", $stateParams.url).get().then(function (data) { callback(data); });
 
+        $scope.isLoading = true;
+
         // Check if we should be in child state (after URL reload)
         var callback = function (data) {
             $scope.page = data;
+            $scope.isLoading = false;
             var state = 'page.' + data.action;
             if (!$state.is(state)) {
-                $state.go(state,{url: data.url});
+                $state.go(state, { url: data.url });
             }
+            // TODO
             angular.element(document.querySelectorAll("body")).removeClass('nav-active');
         }
 
