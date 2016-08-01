@@ -32,7 +32,7 @@ var config = {
     sources: {
         'scripts': 'app/components/**/*.js',
         'styles': 'app/styles/**/*.scss',
-        'images': 'app/images/**/*.{jpg,png}',
+        'images': 'app/images/**/*.{jpg,png,gif}',
         'templates': 'app/components/**/*.html'
     },
 
