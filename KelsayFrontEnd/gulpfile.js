@@ -74,7 +74,7 @@ gulp.task('scripts', function () {
         .pipe($.order(config.scripts));
 
     return $.streamqueue({ objectMode: true }, bower, custom)
-        .pipe($.uglify())
+        //.pipe($.uglify())
         .pipe($.concat(config.targets.js))
         .pipe(gulp.dest(config.targets.dir))
         .pipe($.livereload())
