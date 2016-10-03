@@ -74,7 +74,6 @@ gulp.task('scripts', function () {
         .pipe($.order(config.scripts));
 
     return $.streamqueue({ objectMode: true }, bower, custom)
-        .pipe($.print())
         .pipe($.uglify())
         .pipe($.concat(config.targets.js))
         .pipe(gulp.dest(config.targets.dir))
@@ -102,7 +101,7 @@ gulp.task('styles', function () {
 
 gulp.task("templates", function () {
     return gulp.src(config.sources.templates)
-        //.pipe($.compressor())
+        .pipe($.compressor())
         .pipe($.flatten())
         .pipe(gulp.dest(config.targets.templates))
         .pipe($.livereload())
