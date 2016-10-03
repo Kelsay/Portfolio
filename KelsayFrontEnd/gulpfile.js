@@ -44,8 +44,8 @@ var config = {
 
     // JS Files - order
     scripts: [
-        "app/components/app.js",
-        "app/components/**/*.js"
+        "app.js",
+        "*.js"
     ]
 
 };
