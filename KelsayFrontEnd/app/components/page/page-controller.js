@@ -1,24 +1,26 @@
-﻿angular.module("App")
+﻿(function () {
 
-.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+    angular.module('App').controller('PageController', PageController);
 
-    $stateProvider.state("page", {
-        url: "/:url/",
-        controller: "PageController",
-        templateUrl: "build/templates/page.html",
-        params: {
-            url: ''
+    PageController.$inject = ['API', '$stateParams'];
+
+    function PageController(API, $stateParams) {
+        
+        var vm = this;
+
+        function constructor() {
+            vm.data = API.getPageById({ id: $stateParams.url }).$object;
         }
-    });
 
-    $stateProvider.state("page.article", {});
+        constructor();
 
-    $urlRouterProvider.when("/", "/start/")
+    }
 
-}])
-
-
-.controller("PageController",
+})();
+    
+    
+  /*
+    controller("PageController",
     ['$scope', 'Restangular', '$state', '$stateParams', function ($scope, Restangular, $state, $stateParams) {
 
         var page = Restangular.one("pages", $stateParams.url).get().then(function (data) { callback(data); });
@@ -37,4 +39,4 @@
             angular.element(document.querySelectorAll("body")).removeClass('nav-active');
         }
 
-    }]);
+    }]); */
