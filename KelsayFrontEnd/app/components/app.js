@@ -9,7 +9,6 @@ var dependencies = [
     'ngAnimate',
     'restangular',
     'ui.router',
-    'ui.bootstrap',
     'ct.ui.router.extras.sticky'
 ];
 
