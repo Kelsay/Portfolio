@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,16 +58,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\components\api\api-method-factory.js" />
+    <Content Include="app\components\api\api-service.js" />
     <Content Include="app\components\app.js" />
     <Content Include="app\components\jobs\jobs-controller.js" />
     <Content Include="app\components\jobs\jobs.html" />
-    <Content Include="app\components\menu\menu-directive.js" />
     <Content Include="app\components\page\page-controller.js" />
+    <Content Include="app\components\page\page-route.js" />
     <Content Include="app\components\page\page.html" />
     <Content Include="app\components\common\filter-item.js" />
     <Content Include="app\components\common\filter-trusted.js" />
-    <Content Include="app\components\menu\menu-controller.js" />
-    <Content Include="app\components\menu\menu.html" />
+    <Content Include="app\components\header\header-controller.js" />
+    <Content Include="app\components\header\header.html" />
     <Content Include="app\components\portfolio\portfolio-details.html" />
     <Content Include="app\components\portfolio\portfolio-controller.js" />
     <Content Include="app\components\portfolio\portfolio.html" />

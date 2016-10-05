@@ -20,8 +20,9 @@
 <body>
 
     <div class="wrapper">
-        <!-- Main Menu -->
-        <ng-include src="'build/templates/menu.html'">
+
+        <!-- Main Header & menu -->
+        <ng-include src="'build/templates/header.html'">
             <div class="menu-bar">
                 <div class="loading" ng-show="isLoading">
                     <icon></icon> Loading ..
@@ -29,16 +30,15 @@
             </div>
         </ng-include>
 
+        <!-- Main View -->
         <main class="container">
-
-            <!-- Main View -->
             <div ui-view class="view">
                 <div class="loading" ng-show="isLoading">
                     <icon></icon> Loading ..
                 </div>
             </div>
-
         </main>
+
     </div>
 
     <script src="/build/main.js"></script>
