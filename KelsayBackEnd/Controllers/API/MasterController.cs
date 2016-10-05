@@ -1,15 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-using System.Web.Mvc;
-using Umbraco.Core.Models;
-using Umbraco.Web;
-using Umbraco.Web.Mvc;
 using Umbraco.Web.WebApi;
 
 namespace Kelsay.Controllers
@@ -26,10 +20,11 @@ namespace Kelsay.Controllers
         
         public JsonSerializerSettings JsonSettings = new JsonSerializerSettings
         {
-            ContractResolver = new CamelCasePropertyNamesContractResolver() // Convert to camelCase
+            // Convert property keys to camelCase
+            ContractResolver = new CamelCasePropertyNamesContractResolver() 
         };
 
-        // Returns response Json
+        // Return response Json
         // Keys are converted to Javascript standard camelCase
         public HttpResponseMessage Json(Object model)
         {

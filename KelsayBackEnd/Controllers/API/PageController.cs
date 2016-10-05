@@ -16,7 +16,7 @@ namespace Kelsay.Controllers
     /// Pages API
     /// Gets list of pages and single page by URL alias
     /// </summary>
-    public class PagesController : MasterController
+    public class PageController : MasterController
     {
         public HttpResponseMessage GetAll()
         {
