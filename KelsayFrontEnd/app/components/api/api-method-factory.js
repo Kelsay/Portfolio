@@ -10,23 +10,27 @@
             /**
              * Get new method
              */
-            get: function (params) {
+            get: function (requestParameters) {
 
-                // Request parameters
-                params.url = ApiUrl + params.url;
+                // Make the URL absolute
+                requestParameters.url = ApiUrl + requestParameters.url;
 
-                // Adds an empty object for the reference
-                var helpers = {};
-                helpers.$object = {};
-                helpers.$list = [];
+                return function (args) {
 
-                // Prepare request and handlers, bind helpers
-                var request = $http(params).then(successHandler.bind(helpers), errorHandler);
+                    // Request parameters
+                    var params = replaceTokens(requestParameters, args);
 
-                request.$object = helpers.$object;
-                request.$list = helpers.$list;
+                    // Adds an empty object for the reference
+                    var helpers = {};
+                    helpers.$object = {};
+                    helpers.$list = [];
 
-                return function () {
+                    // Prepare request and handlers, bind helpers
+                    var request = $http(params).then(successHandler.bind(helpers), errorHandler);
+
+                    request.$object = helpers.$object;
+                    request.$list = helpers.$list;
+
                     return request;
                 }
             }
@@ -38,7 +42,7 @@
         function successHandler(response) {
 
             var data = response.data;
-            
+
             if (angular.isArray(data)) {
                 for (var i in data) {
                     var index = data[i].id || i;
@@ -52,7 +56,7 @@
             // Adds non-enumerable property $loaded to help templating
             Object.defineProperty(this.$object, "$loaded", { value: true, enumerable: false });
             Object.defineProperty(this.$list, "$loaded", { value: true, enumerable: false });
-            
+
             return response;
         };
 
@@ -63,6 +67,38 @@
             console.error(response);
             return $q.reject(response);
         }
+
+        /**
+         * Replace tokens in the url with actual request parameters
+         */
+        function replaceTokens(request, args) {
+
+            // Make a new object and copy properties
+            try {                
+                var newRequest = {};
+                angular.extend(newRequest, request);
+            } catch (error) {
+                console.error(error);
+            }
+
+            if (angular.isObject(request) && angular.isObject(args)) {
+
+                // Searches the URL template for the {tokens}
+                var regex = /{(.*)\}/g;
+                var tokens = newRequest.url.match(regex);
+
+                // If there are tokens, try to replace them using the arguments provided
+                if (tokens) {
+                    for (var i in tokens) {
+                        var tokenName = tokens[i].replace('{', "").replace('}', "");
+                        newRequest.url = newRequest.url.replace(tokens[i], args[tokenName]);
+                    }
+                }
+
+            }
+
+            return newRequest;
+        };
 
     }
 

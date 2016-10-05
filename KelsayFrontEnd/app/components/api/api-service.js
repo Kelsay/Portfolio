@@ -6,7 +6,12 @@
 
     function ApiService($http, ApiMethodFactory, ApiUrl) {
 
-        this.getPages = ApiMethodFactory.get({ 'method': 'get', 'url': '/pages' });
+
+        // GET all the pages 
+        this.getPage = ApiMethodFactory.get({ 'method': 'get', 'url': '/page' });
+
+        // GET specific page resource
+        this.getPageById = ApiMethodFactory.get({ 'method': 'get', 'url': '/page/{id}' });
 
     };
 
