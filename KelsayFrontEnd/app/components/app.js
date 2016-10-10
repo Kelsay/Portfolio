@@ -7,16 +7,10 @@
 
 var dependencies = [
     'ngAnimate',
-    'restangular',
     'ui.router',
-    'ct.ui.router.extras.sticky'
 ];
 
 var app = angular.module("App", dependencies)
-
-    .config(['RestangularProvider', function (RestangularProvider) {
-        RestangularProvider.setBaseUrl("http://api.fijolek.net")
-    }])
 
     // Default view for /
     .config(['$urlRouterProvider', function ($urlRouterProvider) {

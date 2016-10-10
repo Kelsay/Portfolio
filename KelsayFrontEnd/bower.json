@@ -11,11 +11,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-route": "#1.4.3",
     "angular": "#1.4.3",
     "angular-animate": "#1.4.3",
-    "restangular": "~1.5.1",
-    "angular-ui-router": "~0.2.15",
-    "ui-router-extras": "~0.0.14"
+    "angular-ui-router": "~0.2.15"
   }
 }
