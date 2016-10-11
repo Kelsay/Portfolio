@@ -27,6 +27,7 @@
 
                     // Prepare request and handlers, bind helpers
                     var request = $http(params).then(successHandler.bind(helpers), errorHandler);
+                    console.log(params);
 
                     request.$object = helpers.$object;
                     request.$list = helpers.$list;
@@ -84,8 +85,9 @@
             if (angular.isObject(request) && angular.isObject(args)) {
 
                 // Searches the URL template for the {tokens}
-                var regex = /{(.*)\}/g;
+                var regex = /{(.*?)\}/g;
                 var tokens = newRequest.url.match(regex);
+                console.log(tokens);
 
                 // If there are tokens, try to replace them using the arguments provided
                 if (tokens) {
