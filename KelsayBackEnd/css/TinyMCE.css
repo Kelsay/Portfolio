@@ -1,33 +1,25 @@
-/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
-div.box {
-border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
-}
+﻿
 
-div.columns.columns-3 {
-border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
-}
+/**umb_name:Box Heading*/
+div.box{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
 
-div.column {
-border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
-}
+/**umb_name:Columns [3]*/
+div.columns.columns-3{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
 
-div.col-md-4 {
-border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
-}
+/**umb_name:Column*/
+div.column{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
 
-img.icon {
-border-radius: 50%; background: #ccc;
-}
+/**umb_name:Col-Md-4*/
+div.col-md-4{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
 
-div.item.col-md-4 {
-border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;
-}
+/**umb_name:Icon*/
+img.icon{border-radius: 50%; background: #ccc;}
 
-h3.title {
-color: #900;
-}
+/**umb_name:Item*/
+div.item.col-md-4{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
 
-h4.role {
-color: #2980b9
-}
+/**umb_name:Title*/
+h3.title{color: #900;}
 
+/**umb_name:Role*/
+h4.role{color: #2980b9}

@@ -12,8 +12,9 @@ namespace Kelsay.App_Start
     {
         public static void Register(HttpConfiguration config)
         {
+
             // Enable CORS
-            EnableCorsAttribute cors = new EnableCorsAttribute("http://fijolek.local", "*", "*");
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
             // Route config
@@ -23,7 +24,7 @@ namespace Kelsay.App_Start
                 routeTemplate: "{controller}",
                 defaults: new { action = "GetAll" }
             );
-
+            
             // List specific eg. sites/1234
             config.Routes.MapHttpRoute(
                 name: "GetSingle",
@@ -38,14 +39,12 @@ namespace Kelsay.App_Start
                 defaults: new {  action = "GetAll" }
             );
 
-            config.MapHttpAttributeRoutes();
-
             // Child controller - single
-            /* config.Routes.MapHttpRoute(
+             config.Routes.MapHttpRoute(
                 name: "GetSingleChild",
                 routeTemplate: "{parentController}/{parentId}/{controller}/{id}",
                 defaults: new { action = "GetSingle" }
-            ); */
+            );
 
 
         }
