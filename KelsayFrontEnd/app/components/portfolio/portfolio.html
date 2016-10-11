@@ -1,19 +1,33 @@
-﻿<!-- Portfolio -->
+﻿<!-- Portfolio - details -->
+<div class="portfolio-details" ng-show="portfolio.$showDetails">
+    <a ng-click="portfolio.hideDetails()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
+    <h2 ng-bind="portfolio.details.name" class="title"></h2>
+    <h5 ng-bind-html="portfolio.details.heading | trusted" class="heading"></h5>
 
-<div class="loading" ng-hide="items.length">
+    <!-- See Online link -->
+    <a href="{{portfolio.details.siteUrl}}" ng-show="portfolio.details.siteUrl" class="online" target="_blank">See online &raquo;</a>
+    <span ng-show="!portfolio.details.siteUrl" class="offline">No online access</span>
+
+    <!-- Description -->
+    <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
+
+    <!-- List of images -->
+    <img ng-repeat="image in portfolio.details.images" ng-src="{{image}}" ng-if="$index >= 1 || item.images.length <= 1" />
+
+</div>
+
+<!-- Portfolio -->
+<div class="loading" ng-hide="portfolio.items.length">
     <icon></icon> Loading ..
 </div>
 <ul class="portfolio">
-    <li ng-repeat="item in items track by $index" class="item">
+    <li ng-repeat="item in portfolio.items track by $index" class="item">
         <div class="frame">
-            <img class="image" ng-src=" {{ item.thumbnail }}" />
-            <div class="menu" ui-sref="page.sites.details({ item: '{{ item.url }}', num: {{$index}} })">
+            <img class="image" ng-src="{{ item.thumbnail }}" />
+            <div class="menu" ng-click="portfolio.showDetails(item.url, $index)">
                 <h3 class="title" ng-bind="item.name"></h3>
                 <h4 class="subtitle" ng-bind-html="item.heading | trusted"></h4>
             </div>
         </div>
     </li>
 </ul>
-
-
-<div ui-view></div>

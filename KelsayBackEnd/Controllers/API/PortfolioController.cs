@@ -52,7 +52,7 @@ namespace Kelsay.Controllers
             }
         }
 
-        [Route("pages/{parentId}/portfolio/{id}")]
+        [Route("page/{parentId}/portfolio/{id}")]
         public HttpResponseMessage GetSingle(string parentId, string id)
         {
             try

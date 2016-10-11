@@ -70,8 +70,8 @@
     <Content Include="app\components\common\filter-trusted.js" />
     <Content Include="app\components\header\header-controller.js" />
     <Content Include="app\components\header\header.html" />
-    <Content Include="app\components\portfolio\portfolio-details.html" />
     <Content Include="app\components\portfolio\portfolio-controller.js" />
+    <Content Include="app\components\portfolio\portfolio-route.js" />
     <Content Include="app\components\portfolio\portfolio.html" />
     <Content Include="app\styles\common\common.scss" />
     <None Include="app\styles\common\breakpoints.scss" />

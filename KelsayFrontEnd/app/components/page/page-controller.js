@@ -2,41 +2,34 @@
 
     angular.module('App').controller('PageController', PageController);
 
-    PageController.$inject = ['API', '$stateParams'];
+    PageController.$inject = ['API', '$state', '$stateParams'];
 
-    function PageController(API, $stateParams) {
+    function PageController(API, $state, $stateParams) {
         
         var vm = this;
 
         function constructor() {
-            vm.data = API.getPageById({ id: $stateParams.url }).$object;
+            API.getPageById({ id: $stateParams.url }).then(successHandler);
         }
 
         constructor();
 
+        function successHandler(response) {
+            vm.data = response.data;
+            vm.data.$loaded = true;
+            goToChildState(vm.data);
+        }
+
+        /**
+         * After reload from URL, check if we should be in nested state
+         */
+        function goToChildState(data) {
+            var state = 'page.' + data.action;
+            if (!$state.is(state)) {
+                $state.go(state, { url: data.url })
+            }
+        }
+
     }
 
 })();
-    
-    
-  /*
-    controller("PageController",
-    ['$scope', 'Restangular', '$state', '$stateParams', function ($scope, Restangular, $state, $stateParams) {
-
-        var page = Restangular.one("pages", $stateParams.url).get().then(function (data) { callback(data); });
-
-        $scope.isLoading = true;
-
-        // Check if we should be in child state (after URL reload)
-        var callback = function (data) {
-            $scope.page = data;
-            $scope.isLoading = false;
-            var state = 'page.' + data.action;
-            if (!$state.is(state)) {
-                $state.go(state, { url: data.url });
-            }
-            // TODO
-            angular.element(document.querySelectorAll("body")).removeClass('nav-active');
-        }
-
-    }]); */
