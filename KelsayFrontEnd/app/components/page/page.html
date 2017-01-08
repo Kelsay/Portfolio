@@ -8,7 +8,6 @@
         <article ng-bind-html="page.data.body | trusted"></article>
         <div ui-view></div>
 
-        Components:
         <div ng-repeat="row in page.data.components track by $index">
             <div ng-repeat="widget in row">
                 {{ widget }}
