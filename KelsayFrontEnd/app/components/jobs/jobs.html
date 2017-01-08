@@ -1,5 +1,16 @@
-﻿<h1 class="main-title" ng-bind-html="article.heading | trusted">Loading ..</h1>
+﻿<div class="loading" ng-show="!jobs.items.$loaded">Loading</div>
 
-<section class="main-container">
-    <article ng-bind-html="article.body | trusted">Loading ..</article>
-</section>
+<div class="job" ng-repeat="item in jobs.items" ng-show="jobs.items.$loaded">
+
+    <div class="side">
+        <img ng-src="{{ item.icon }}" class="logo" />
+        <div class="date">
+            <b>{{ item.dateEnd }}</b>
+            {{ item.dateStart }}
+
+        </div>
+    </div>
+    <h3 class="title" ng-bind="item.name"></h3>
+    <div class="location" ng-bind="item.location"></div>
+    <div class="description" ng-bind-html="item.description | trusted"></div>
+</div>

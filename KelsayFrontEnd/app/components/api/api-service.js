@@ -20,7 +20,7 @@
         this.getPortfolioById = ApiMethodFactory.get({ 'method': 'get', 'url': '/page/{id}/portfolio/{itemId}' });
 
         // GET list of jobs on a page
-        this.getJobs = ApiMethodFactory.get({ 'method': 'get', 'ur': '/page/{id}/jobs' });
+        this.getJobs = ApiMethodFactory.get({ 'method': 'get', 'url': '/page/{id}/jobs' });
 
 
     };

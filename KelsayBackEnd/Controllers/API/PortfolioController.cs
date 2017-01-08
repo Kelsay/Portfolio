@@ -23,7 +23,7 @@ namespace Kelsay.Controllers
             try
             {
                 List<PortfolioModel> model = new List<PortfolioModel>();
-                IPublishedContent page = Umbraco.GetRoot().Children().Where(x => x.RawUrl().Equals(parentId)).FirstOrDefault();
+                IPublishedContent page = GetPage(parentId);
                 if (page.Children().Any())
                 {
                     foreach (IPublishedContent portfolio in page.Children())

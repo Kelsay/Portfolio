@@ -7,12 +7,11 @@ namespace Kelsay.Models
 {
     public class JobModel
     {
-        public string Company;
-        public string Title;
+        public string Name;
         public string Description;
         public string Location;
-        public string Image;
-        public string StartDate;
-        public string EndDate;
+        public string Icon;
+        public string DateStart;
+        public string DateEnd;
     }
 }

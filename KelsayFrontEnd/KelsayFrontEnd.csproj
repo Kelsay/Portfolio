@@ -66,6 +66,7 @@
     <Content Include="app\components\article\article.html" />
     <Content Include="app\components\jobs\jobs-controller.js" />
     <Content Include="app\components\jobs\jobs.html" />
+    <Content Include="app\components\jobs\jobs-route.js" />
     <Content Include="app\components\page\page-controller.js" />
     <Content Include="app\components\page\page-route.js" />
     <Content Include="app\components\page\page.html" />

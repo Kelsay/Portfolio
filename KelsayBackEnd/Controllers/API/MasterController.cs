@@ -1,10 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using Kelsay.Code;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using Umbraco.Core.Models;
+using Umbraco.Web;
 using Umbraco.Web.WebApi;
+using System.Linq;
 
 namespace Kelsay.Controllers
 {
@@ -23,6 +27,12 @@ namespace Kelsay.Controllers
             // Convert property keys to camelCase
             ContractResolver = new CamelCasePropertyNamesContractResolver() 
         };
+
+        // Get the page based on the alias
+        public IPublishedContent GetPage(string alias)
+        {
+            return Umbraco.GetRoot().Children().Where(x => x.RawUrl().Equals(alias)).FirstOrDefault();
+        }
 
         // Return response Json
         // Keys are converted to Javascript standard camelCase

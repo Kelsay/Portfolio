@@ -1,4 +1,4 @@
-﻿
+
 
 /**umb_name:Box Heading*/
 div.box{border: 1px solid #aaa; padding: 10px; display: block; margin: 10px;}
@@ -22,4 +22,5 @@ div.item.col-md-4{border: 1px solid #aaa; padding: 10px; display: block; margin:
 h3.title{color: #900;}
 
 /**umb_name:Role*/
-h4.role{color: #2980b9}
+h4.role{color: #2980b9;
+font-weight: normal}

@@ -682,6 +682,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\UmbracoExtensions.cs" />
+    <Compile Include="Controllers\API\JobsController.cs" />
     <Compile Include="Controllers\API\MasterController.cs" />
     <Compile Include="Controllers\API\PageController.cs" />
     <Compile Include="Controllers\API\PortfolioController.cs" />
