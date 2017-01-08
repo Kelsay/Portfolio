@@ -31,7 +31,7 @@ var config = {
     // Build source files / watch paths
     sources: {
         'scripts': 'app/components/**/*.js',
-        'styles': 'app/styles/**/*.scss',
+        'styles': ['app/styles/**/*.scss', 'bower_components/bootstrap-sass-grid/css/*.css'],
         'images': 'app/images/**/*.{jpg,png,gif}',
         'templates': 'app/components/**/*.html'
     },

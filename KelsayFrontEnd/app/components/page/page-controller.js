@@ -5,7 +5,7 @@
     PageController.$inject = ['API', '$state', '$stateParams'];
 
     function PageController(API, $state, $stateParams) {
-        
+
         var vm = this;
 
         function constructor() {
@@ -16,6 +16,7 @@
 
         function successHandler(response) {
             vm.data = response.data;
+            console.log(response.data);
             vm.data.$loaded = true;
             goToChildState(vm.data);
         }
@@ -25,7 +26,7 @@
          */
         function goToChildState(data) {
             var state = 'page.' + data.action;
-            if (!$state.is(state)) {
+            if (!$state.is(state) && $state.href(state)) {
                 $state.go(state, { url: data.url })
             }
         }

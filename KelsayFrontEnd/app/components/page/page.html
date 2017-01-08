@@ -1,11 +1,22 @@
 ﻿<section class="page-type-{{ page.data.action }} page-id-{{ page.data.url }}">
     <h1 class="main-title" ng-bind-html="page.data.heading | trusted" ng-show="page.data.heading">Loading ..</h1>
-    
+
     <div class="main-container">
         <div class="loading" ng-show="isLoading">
             <icon></icon> Loading ..
         </div>
         <article ng-bind-html="page.data.body | trusted"></article>
         <div ui-view></div>
+
+        Components:
+        <div ng-repeat="row in page.data.components track by $index">
+            <div ng-repeat="widget in row">
+                {{ widget }}
+                <div ng-repeat="field in widget">
+                    Field: <pre>{{ field }}</pre>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>

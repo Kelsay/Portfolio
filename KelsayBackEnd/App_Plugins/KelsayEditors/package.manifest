@@ -1,0 +1,19 @@
+{
+	"gridEditors": [
+		{
+			"name": "Job",
+			"alias" : "job",
+			"view" : "~/App_Plugins/KelsayEditors/job.html",
+			"icon": "icon-code"
+		},
+		{
+            "name": "Kelsay RTE",
+            "alias": "rte",
+            "view": "rte",
+            "icon": "icon-article"
+        }
+	],
+	"javascript" :[
+		"/App_Plugins/KelsayEditors/job-controller.js"
+	]
+}

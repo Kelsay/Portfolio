@@ -9,6 +9,8 @@ using Umbraco.Core.Models;
 using Umbraco.Web;
 using Kelsay.Code;
 using Kelsay.Models;
+using Newtonsoft.Json;
+using Lecoati.LeBlender.Extension.Models;
 
 namespace Kelsay.Controllers
 {
@@ -56,10 +58,10 @@ namespace Kelsay.Controllers
                 {
                     Name = page.Name,
                     Heading = page.GetString("heading"),
-                    Body = page.GetString("body").ChangeUrlsToAbsolute() 
-                         + page.GetGridHtml("layout").ToString().ChangeUrlsToAbsolute(),
+                    Body = page.GetString("body").ChangeUrlsToAbsolute(),
                     Url = id,
-                    Action = page.DocumentTypeAlias.ToLower()
+                    Action = page.DocumentTypeAlias.ToLower(),
+                    Components =  new ComponentsModel(page.GetString("layout"))
                 };
                 return Json(model);
             }
@@ -68,5 +70,6 @@ namespace Kelsay.Controllers
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
         }
+
     }
 }

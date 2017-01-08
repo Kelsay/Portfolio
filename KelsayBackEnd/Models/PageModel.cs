@@ -16,6 +16,7 @@ namespace Kelsay.Models
     {
         public string Heading;
         public string Body;
+        public ComponentsModel Components;
     }
 
 }

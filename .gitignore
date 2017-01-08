@@ -12,3 +12,4 @@ KelsayBackEnd/App_Browsers
 KelsayBackEnd/bin
 KelsayBackEnd/obj
 KelsayBackEnd/media
+KelsayBackEnd/Config/connectionStrings.config

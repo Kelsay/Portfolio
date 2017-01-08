@@ -303,6 +303,8 @@
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\css\font-awesome.css" />
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\css\font-awesome.min.css" />
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_Plugins\KelsayEditors\job-controller.js" />
+    <Content Include="App_Plugins\KelsayEditors\job.html" />
     <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.html" />
     <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.js" />
     <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\edit.html" />
@@ -671,7 +673,9 @@
     <Content Include="media\1076\tu_thumb.jpg" />
     <Content Include="media\1077\photo.jpg" />
     <Content Include="media\1077\photo_thumb.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\MainApplication.cs" />
@@ -683,8 +687,10 @@
     <Compile Include="Controllers\API\PortfolioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
+    <Compile Include="Models\ComponentsModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\LeBlenderDataModel.cs" />
     <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\PortfolioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -734,6 +740,8 @@
     <Content Include="Config\BaseRestExtensions.config" />
     <Content Include="Config\applications.config" />
     <Content Include="Config\404handlers.config" />
+    <Content Include="App_Plugins\KelsayEditors\package.manifest" />
+    <Content Include="App_Plugins\KelsayEditors\job.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

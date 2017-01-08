@@ -14,8 +14,6 @@
                 url: ''
             }
         });
-
-        $stateProvider.state("page.article", {});
     }
 
 })();
