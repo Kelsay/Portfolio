@@ -1,19 +1,21 @@
 ﻿<!-- Portfolio - details -->
 <div class="portfolio-details" ng-show="portfolio.$showDetails">
-    <a ng-click="portfolio.hideDetails()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
-    <h2 ng-bind="portfolio.details.name" class="title"></h2>
-    <h5 ng-bind-html="portfolio.details.heading | trusted" class="heading"></h5>
+    <div class="overlay" ng-click="portfolio.hideDetails()"></div>
+    <div class="window">
+        <a ng-click="portfolio.hideDetails()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
+        <h2 ng-bind="portfolio.details.name" class="title"></h2>
+        <h5 ng-bind-html="portfolio.details.heading | trusted" class="heading"></h5>
 
-    <!-- See Online link -->
-    <a href="{{portfolio.details.siteUrl}}" ng-show="portfolio.details.siteUrl" class="online" target="_blank">See online &raquo;</a>
-    <span ng-show="!portfolio.details.siteUrl" class="offline">No online access</span>
+        <!-- See Online link -->
+        <a href="{{portfolio.details.siteUrl}}" ng-show="portfolio.details.siteUrl" class="online" target="_blank">See online &raquo;</a>
+        <span ng-show="!portfolio.details.siteUrl" class="offline">No online access</span>
 
-    <!-- Description -->
-    <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
+        <!-- Description -->
+        <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
 
-    <!-- List of images -->
-    <img ng-repeat="image in portfolio.details.images" ng-src="{{image}}" ng-if="$index >= 1 || item.images.length <= 1" />
-
+        <!-- List of images -->
+        <img ng-repeat="image in portfolio.details.images" ng-src="{{image}}" ng-if="$index >= 1 || item.images.length <= 1" />
+    </div>
 </div>
 
 <!-- Portfolio -->

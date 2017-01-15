@@ -20,7 +20,7 @@
                     // Request parameters
                     var params = replaceTokens(requestParameters, args);
 
-                    // Adds an empty object for the reference
+                    // Add an empty object for the reference
                     var helpers = {};
                     helpers.$object = {};
                     helpers.$list = [];
@@ -38,6 +38,7 @@
 
         /**
          * Default success handler
+         * Add $object and $list properties to the response for easy templating and reduce number of callbacks
          */
         function successHandler(response) {
 
@@ -53,7 +54,7 @@
                 angular.extend(this.$object, response.data);
             }
 
-            // Adds non-enumerable property $loaded to help templating
+            // Add non-enumerable property $loaded to help templating
             Object.defineProperty(this.$object, "$loaded", { value: true, enumerable: false });
             Object.defineProperty(this.$list, "$loaded", { value: true, enumerable: false });
 

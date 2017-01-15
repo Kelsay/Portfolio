@@ -43,6 +43,7 @@ body, html {
     font-size: 18px;
     padding: 10px;
     min-height: 100px;
+    position: static;
     @include breakpoint($narrow) { padding: 10px; margin: 40px 0 0 0; }
     @include breakpoint($tablet) { padding: 20px; margin: 40px 0 0 0; }
     @include breakpoint($wide) { padding: 40px; }

@@ -682,10 +682,13 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\UmbracoExtensions.cs" />
+    <Compile Include="Code\UmbracoToModel.cs" />
     <Compile Include="Controllers\API\JobsController.cs" />
-    <Compile Include="Controllers\API\MasterController.cs" />
+    <Compile Include="Controllers\API\Base\MasterController.cs" />
     <Compile Include="Controllers\API\PageController.cs" />
     <Compile Include="Controllers\API\PortfolioController.cs" />
+    <Compile Include="Controllers\API\SkillsetController.cs" />
+    <Compile Include="Models\SkillsetModel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ArticleModel.cs" />
     <Compile Include="Models\ComponentsModel.cs" />

@@ -1,11 +1,12 @@
-﻿(function () {
+﻿// API service
+// Defines API call methods using MethodFactory
+(function () {
 
     angular.module("App").service("API", ApiService);
 
     ApiService.$inject = ["$http", "ApiMethodFactory", "ApiUrl"];
 
     function ApiService($http, ApiMethodFactory, ApiUrl) {
-
 
         // GET list of pages 
         this.getPage = ApiMethodFactory.get({ 'method': 'get', 'url': '/page' });
@@ -22,6 +23,8 @@
         // GET list of jobs on a page
         this.getJobs = ApiMethodFactory.get({ 'method': 'get', 'url': '/page/{id}/jobs' });
 
+        // GET list of skillset on a page
+        this.getSkills = ApiMethodFactory.get({ 'method': 'get', 'url': '/page/{id}/skillset' });
 
     };
 

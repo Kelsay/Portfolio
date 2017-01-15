@@ -1,0 +1,10 @@
+﻿<div class="loading" ng-show="!skills.items.$loaded">Loading</div>
+
+<div class="skills">
+    <div class="item" ng-repeat="item in skills.items">
+        <img ng-src="{{item.icon}}" class="icon">
+        <h2 class="title" ng-bind="item.title"></h2>
+        <div class="copy" ng-bind-html="item.body | trusted"></div>
+    </div>
+</div>
+

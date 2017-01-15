@@ -1,11 +1,29 @@
-.page-id-skills {
+.skills {
 
     .item {
+        min-height: 100px;
+        position: relative;
+
+        @include breakpoint($tablet) {
+            padding: 0 0 0 120px;
+            margin-bottom: 64px;
+        }
+
+        @include breakpoint($normal) {
+            padding: 0 0 0 140px;
+            margin-bottom: 64px;
+        }
     }
 
     .title {
         color: #bb9b72;
+        font-weight: 300;
         text-align: center;
+
+        @include breakpoint($tablet) {
+            text-align: left;
+            margin-bottom: 32px;
+        }
     }
 
     .icon {
@@ -20,6 +38,9 @@
         @include breakpoint($tablet) {
             width: 96px;
             height: 96px;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
 

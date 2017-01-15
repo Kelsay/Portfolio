@@ -16,7 +16,6 @@
 
         function successHandler(response) {
             vm.data = response.data;
-            console.log(response.data);
             vm.data.$loaded = true;
             goToChildState(vm.data);
         }
