@@ -33,6 +33,7 @@ body, html {
 
     @include breakpoint($normal) {
         font-size: 48px;
+        min-height: 52px;
         margin: 150px 0;
     }
 }

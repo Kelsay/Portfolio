@@ -1,20 +1,29 @@
 ﻿<!-- Portfolio - details -->
-<div class="portfolio-details" ng-show="portfolio.$showDetails">
-    <div class="overlay" ng-click="portfolio.hideDetails()"></div>
-    <div class="window">
-        <a ng-click="portfolio.hideDetails()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
-        <h2 ng-bind="portfolio.details.name" class="title"></h2>
-        <h5 ng-bind-html="portfolio.details.heading | trusted" class="heading"></h5>
+<div class="portfolio-details">
+    <div class="overlay" ng-show="portfolio.$showDetails" ng-click="portfolio.hideDetails()"></div>
+    <div class="window" ng-show="portfolio.$showDetails">
 
-        <!-- See Online link -->
-        <a href="{{portfolio.details.siteUrl}}" ng-show="portfolio.details.siteUrl" class="online" target="_blank">See online &raquo;</a>
-        <span ng-show="!portfolio.details.siteUrl" class="offline">No online access</span>
+        <div class="loading" ng-hide="portfolio.details.$loaded">
+            <icon></icon> Loading ..
+        </div>
 
-        <!-- Description -->
-        <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
+        <div ng-show="portfolio.details.$loaded">
+            <a ng-click="portfolio.hideDetails()" class="close"><span class="glyphicon glyphicon-remove"></span></a>
+            <h2 ng-bind="portfolio.details.name" class="title"></h2>
+            <h5 ng-bind-html="portfolio.details.heading | trusted" class="heading"></h5>
 
-        <!-- List of images -->
-        <img ng-repeat="image in portfolio.details.images" ng-src="{{image}}" ng-if="$index >= 1 || item.images.length <= 1" />
+            <!-- See Online link -->
+            <a href="{{portfolio.details.siteUrl}}" ng-show="portfolio.details.siteUrl" class="online" target="_blank">See online &raquo;</a>
+            <span ng-show="!portfolio.details.siteUrl" class="offline">No online access</span>
+
+            <!-- Description -->
+            <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
+
+            <!-- List of images -->
+            <div class="col-md-3" ng-repeat="image in portfolio.details.images" ng-if="$index >= 1 || item.images.length <= 1" >
+                <img ng-src="{{image}}" />
+            </div>
+        </div>
     </div>
 </div>
 

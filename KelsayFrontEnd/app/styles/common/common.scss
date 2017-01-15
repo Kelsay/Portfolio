@@ -16,19 +16,6 @@
         background: rgba(255,255,255,0.9);
         box-shadow: 0 0 12px rgba(0,0,0,0.25);
         border-radius: 4px;
-
-        &:before {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url(/build/images/bg.jpg) fixed no-repeat center 90px;
-            filter: blur(5px);
-            z-index: -10;
-        }
     }
 }
 
