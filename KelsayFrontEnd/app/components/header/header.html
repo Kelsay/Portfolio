@@ -1,9 +1,9 @@
 ﻿<div class="menu-bar" ng-controller="HeaderController as header">
-    <span class="menu-launcher glyphicon glyphicon-menu-hamburger"></span>
+    <span class="menu-launcher glyphicon glyphicon-menu-hamburger" ng-click="nav.toggle()"></span>
     <div class="container">
         <img ui-sref="page.article({url:'start'})" src="/build/images/logo.png" class="logo" />
         <menu class="main-menu">
-            <a ng-repeat="item in header.items" ui-sref="{{ item | item }}" ui-sref-active="active">
+            <a ng-repeat="item in header.items" ui-sref="{{ item | item }}" ui-sref-active="active" ng-click="nav.close()">
                 {{ item.name }}
             </a>
         </menu>

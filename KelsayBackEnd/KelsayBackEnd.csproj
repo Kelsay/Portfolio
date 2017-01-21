@@ -94,10 +94,6 @@
       <HintPath>..\packages\UmbracoCms.Core.7.5.3\lib\interfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Lecoati.LeBlender.Extension, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Lecoati.LeBlender.1.0.8\lib\Lecoati.LeBlender.Extension.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.5.3\lib\log4net.dll</HintPath>
       <Private>True</Private>
@@ -305,28 +301,6 @@
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\fonts\fontawesome-webfont.svg" />
     <Content Include="App_Plugins\KelsayEditors\job-controller.js" />
     <Content Include="App_Plugins\KelsayEditors\job.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\delete.js" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\edit.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\edit.js" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\sort.html" />
-    <Content Include="App_Plugins\LeBlender\backoffice\GridEditorManager\sort.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\blendereditorwrapper.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\layersresizabledraggable.js" />
-    <Content Include="App_Plugins\LeBlender\common\directive\propertygrideditorwrapper.js" />
-    <Content Include="App_Plugins\LeBlender\common\filter\orderobjectby.filter.js" />
-    <Content Include="App_Plugins\LeBlender\common\services\requesthelper.service.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\assets\parameterconfig.css" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.prevalues.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\dialogs\parameterconfig.prevalues.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblendereditor.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblendereditor.html" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblenderproperties.controller.js" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\leblenderproperties.html" />
-    <Content Include="App_Plugins\LeBlender\editors\textstring\textstringconfig.html" />
-    <Content Include="App_Plugins\LeBlender\views_samples\sample_styles.css" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -349,6 +323,7 @@
     <Content Include="Config\Lang\ru-RU.user.xml" />
     <Content Include="Config\Lang\sv-SE.user.xml" />
     <Content Include="Config\Lang\zh-CN.user.xml" />
+    <Content Include="css\TinyMCE.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="media\1001\academy-napoleon.jpg" />
@@ -700,7 +675,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Config\trees.config" />
@@ -713,13 +690,6 @@
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\fonts\fontawesome-webfont.woff2" />
     <Content Include="App_Plugins\FontAwesomeIconPack\4.3.0\fonts\FontAwesome.otf" />
     <Content Include="App_Plugins\FontAwesomeIconPack\package.manifest" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\Base.cshtml" />
-    <Content Include="App_Plugins\LeBlender\editors\leblendereditor\views\LeBlender.cshtml" />
-    <Content Include="App_Plugins\LeBlender\package.manifest" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Carousel.cshtml" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Highlight.cshtml" />
-    <Content Include="App_Plugins\LeBlender\views_samples\Tabs.cshtml" />
-    <Content Include="App_Plugins\LeBlender\Web.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
@@ -746,6 +716,7 @@
     <Content Include="Config\404handlers.config" />
     <Content Include="App_Plugins\KelsayEditors\package.manifest" />
     <Content Include="App_Plugins\KelsayEditors\job.cshtml" />
+    <Content Include="Config\connectionStrings.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -756,6 +727,10 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\TEMP\PluginCache\" />
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -7,7 +7,6 @@ using System.Web;
 using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Web;
-using Lecoati.LeBlender.Extension.Models;
 
 namespace Kelsay.Code
 {
@@ -106,12 +105,6 @@ namespace Kelsay.Code
                 }
             }
             return "";
-        }
-
-        public static string GetImage(this LeBlenderValue item, string fieldName)
-        {
-            string imageId = item.GetValue<string>(fieldName);
-            return GetImageSrc(imageId);
         }
 
 
