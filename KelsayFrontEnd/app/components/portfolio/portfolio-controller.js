@@ -9,9 +9,36 @@
         // Properties
         var vm = this;
         vm.$showDetails = false;
+        vm.$loading = false;
+        vm.$isFinished = false;
+
+        // A list of items
+        vm.items = [];
 
         // Init
-        vm.items = API.getPortfolio({ id: $stateParams.url }).$list;
+
+        /***
+         * Get a single page of portfolio items
+         */
+
+        vm.loadItems = function () {
+            vm.$loading = true;
+            var data = {
+                params: {
+                    start: vm.items.length
+                }
+            };
+            API.getPortfolio({ id: $stateParams.url }, data).then(loadItemsHandler);
+        }
+
+        // Call at the startup to load the first portion
+        vm.loadItems();
+
+        function loadItemsHandler(response) {
+            vm.items = vm.items.concat(response.data.items);
+            vm.$finished = response.data.isLast;
+            vm.$loading = false;
+        }
 
         /**
          * Show details of the selected portfolio item

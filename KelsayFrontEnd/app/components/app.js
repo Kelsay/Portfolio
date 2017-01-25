@@ -18,8 +18,8 @@ var app = angular.module("App", dependencies)
     }])
 
     // Add base URL constant
-    .constant('ApiUrl', 'http://api.fijolek.net')
-    //.constant('ApiUrl', 'http://api.kelsay.local')
+    //.constant('ApiUrl', 'http://api.fijolek.net')
+    .constant('ApiUrl', 'http://api.kelsay.local')
 
     // Put the app in the HTML5 mode for the clean urls
     .config(['$locationProvider', function ($locationProvider) {

@@ -16,22 +16,37 @@ namespace Kelsay.Controllers
 {
 
     public class PortfolioController : MasterController
-    { 
+    {
 
         public HttpResponseMessage GetAll(string parentId)
         {
+            int start = 0;
+            int limit = 12;
+            string startPosition = Request.GetQueryNameValuePairs()
+                .SingleOrDefault(x => x.Key == "start")
+                .Value;
+            Int32.TryParse(startPosition, out start);
+
             try
             {
-                List<PortfolioModel> model = new List<PortfolioModel>();
+                PortfolioListModel model = new PortfolioListModel();
                 IPublishedContent page = GetPage(parentId);
                 if (page.Children().Any())
                 {
-                    foreach (IPublishedContent portfolio in page.Children())
+                    IEnumerable<IPublishedContent> items = page.Children()
+                        .Where(x => x.DocumentTypeAlias.Equals("Site"))
+                        .Skip(start)
+                        .Take(limit);
+
+                    foreach (IPublishedContent portfolio in items)
                     {
-                        IEnumerable<string> images = portfolio.GetImagesAsList("image");
+                        // Prepare data
+                        IEnumerable<string> images = portfolio.GetImagesAsList("image", 400, 300);
                         string thumbnail = images.Any() ? images.ElementAt(0) : "";
                         Uri alias = new Uri(portfolio.UrlAbsolute());
-                        model.Add(new PortfolioModel
+
+                        // Add current item to the model
+                        model.Items.Add(new PortfolioModel
                         {
                             Name = portfolio.Name,
                             Heading = portfolio.GetString("heading"),
@@ -41,6 +56,13 @@ namespace Kelsay.Controllers
                             Slogan = portfolio.GetString("slogan"),
                             Url = alias.Segments.Last().TrimEnd('/')
                         });
+
+                        // Mark the last page
+                        if (portfolio.IsLast())
+                        {
+                            model.IsLast = true;
+                        }
+
                     }
                 }
 
@@ -60,8 +82,9 @@ namespace Kelsay.Controllers
                 string fullUrl = "/" + parentId + "/" + id + "/";
                 IPublishedContent parent = Umbraco.GetRoot().Children().Where(x => x.RawUrl().Equals(parentId)).FirstOrDefault();
                 IPublishedContent page = parent.Children().Where(x => x.Url.Equals(fullUrl)).FirstOrDefault();
-                PortfolioFullModel model = new PortfolioFullModel { 
-                    Images = page.GetImagesAsList("image"),
+                PortfolioFullModel model = new PortfolioFullModel
+                {
+                    Images = page.GetImagesAsList("image", 400, 300),
                     Description = page.GetString("description"),
                     Name = page.Name,
                     SiteUrl = page.GetString("url"),

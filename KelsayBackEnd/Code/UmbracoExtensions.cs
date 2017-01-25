@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Web;
-using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
@@ -14,13 +10,13 @@ namespace Kelsay.Code
     {
 
         // Exposing Umbraco Helper
-        static UmbracoHelper Umbraco = new UmbracoHelper(UmbracoContext.Current);
+       private static UmbracoHelper Umbraco = new UmbracoHelper(UmbracoContext.Current);
 
         /// <summary>
         /// Returns content of given field as a string.
         /// </summary>
         /// <param name="field">Alias of the text field</param>
-        /// <returns></returns>
+        /// <returns>Field content as string</returns>
         public static string GetString(this IPublishedContent page, string field)
         {
             return page.GetPropertyValue<string>(field, string.Empty);
@@ -30,7 +26,7 @@ namespace Kelsay.Code
         /// Returns content of given field as a HtmlString.
         /// </summary>
         /// <param name="field">Alias of the text field</param>
-        /// <returns></returns>
+        /// <returns>Field content as HtmlString</returns>
         public static HtmlString GetHtmlString(this IPublishedContent page, string field)
         {
             return page.GetPropertyValue<HtmlString>(field, new HtmlString(""));
@@ -43,7 +39,7 @@ namespace Kelsay.Code
 
         public static IPublishedContent GetRoot(this UmbracoHelper Umbraco)
         {
-            return Umbraco.TypedContentAtRoot().Where(x => x.DocumentTypeAlias.Equals("Master")).FirstOrDefault();
+            return GetRoot();
         }
 
         /// <summary>
@@ -58,9 +54,16 @@ namespace Kelsay.Code
             return pages;
         }
 
-
-
-        public static IEnumerable<string> GetImagesAsList(this IPublishedContent page, string fieldName)
+        /// <summary>
+        /// Get list of image URLs from page with multiple image field
+        /// Specify width and height if required
+        /// </summary>
+        /// <param name="page">Umbraco page</param>
+        /// <param name="fieldName">Name of the multiple image field</param>
+        /// <param name="width">Optional width</param>
+        /// <param name="height">Optional height</param>
+        /// <returns></returns>
+        public static List<string> GetImagesAsList(this IPublishedContent page, string fieldName, int? width = null, int? height = null)
         {
             string fieldValue = page.GetString(fieldName);
             List<string> urls = new List<string>();
@@ -71,29 +74,39 @@ namespace Kelsay.Code
                 {
                     foreach (string id in ids)
                     {
-                        urls.Add(GetImageSrc(id));
+                        urls.Add(GetImageSrc(id, width, height));
                     }
                 }
             }
             return urls;
         }
 
-
-
-        // Get Image Source
-        public static string GetImageSrc(this IPublishedContent page, string fieldName)
+        /// <summary>
+        /// Get Image source as string based on the field name and optional width / height
+        /// </summary>
+        /// <param name="page">IPublishedContent Umbraco document</param>
+        /// <param name="fieldName">string field id</param>
+        /// <param name="width">Optional width</param>
+        /// <param name="height">Optional height</param>
+        /// <returns></returns>
+        public static string GetImageSrc(this IPublishedContent page, string fieldName, int? width = null, int? height = null)
         {
             string id = page.GetString(fieldName);
             if (!string.IsNullOrEmpty(fieldName) && !string.IsNullOrEmpty(id))
             {
-                return GetImageSrc(id);
+                return GetImageSrc(id, width, height);
             }
             return "";
         }
 
-
-
-        public static string GetImageSrc(string id)
+        /// <summary>
+        /// Get the image url from Umbraco Media object
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static string GetImageSrc(string id, int? width = null, int? height = null)
         {
             if (!string.IsNullOrWhiteSpace(id))
             {
@@ -101,20 +114,29 @@ namespace Kelsay.Code
                 if (media != null)
                 {
                     string host = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
-                    return host + media.Url;
+                    if (width != null || height != null)
+                    {
+                        return host + media.GetCropUrl(width, height);
+                    }
+                    else
+                    {
+                        return host + media.Url;
+                    }
                 }
             }
             return "";
         }
 
-
+        /// <summary>
+        /// Convert the relative URL to absolute
+        /// </summary>
+        /// <param name="media"></param>
+        /// <returns></returns>
         public static string GetAbsoluteUrl(this IPublishedContent media)
         {
             string host = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
             return host + media.Url;
         }
-
-
 
         /// <summary>
         /// Gets the absolute URL to the cropped image

@@ -15,10 +15,11 @@
                 // Make the URL absolute
                 requestParameters.url = ApiUrl + requestParameters.url;
 
-                return function (args) {
+                return function (values, data) {
 
                     // Request parameters
-                    var params = replaceTokens(requestParameters, args);
+                    var request = replaceTokens(requestParameters, values);
+                    angular.extend(request, data);
 
                     // Add an empty object for the reference
                     var helpers = {};
@@ -26,12 +27,12 @@
                     helpers.$list = [];
 
                     // Prepare request and handlers, bind helpers
-                    var request = $http(params).then(successHandler.bind(helpers), errorHandler);
+                    var promise = $http(request).then(successHandler.bind(helpers), errorHandler);
 
-                    request.$object = helpers.$object;
-                    request.$list = helpers.$list;
+                    promise.$object = helpers.$object;
+                    promise.$list = helpers.$list;
 
-                    return request;
+                    return promise;
                 }
             }
         }

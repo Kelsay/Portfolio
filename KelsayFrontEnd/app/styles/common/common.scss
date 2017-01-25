@@ -20,6 +20,13 @@
 }
 
 // A loading icon
+.loading-icon {
+    display: inline-block;
+    background: url('/build/images/loading.gif');
+    width: 16px;
+    height: 11px;
+}
+
 .loading {
     font-size: 16px;
     padding: 20px;
@@ -32,9 +39,6 @@
     }
 
     icon {
-        display: inline-block;
-        background: url('/build/images/loading.gif');
-        width: 16px;
-        height: 11px;
+        @extend .loading-icon;
     }
 }

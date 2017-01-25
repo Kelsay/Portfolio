@@ -648,6 +648,35 @@
     <Content Include="media\1076\tu_thumb.jpg" />
     <Content Include="media\1077\photo.jpg" />
     <Content Include="media\1077\photo_thumb.jpg" />
+    <Content Include="media\1078\currency_mate.jpg" />
+    <Content Include="media\1078\currency_mate_400.jpg" />
+    <Content Include="media\1078\currency_mate_400x300.jpg" />
+    <Content Include="media\1078\currency_mate_thumb.jpg" />
+    <Content Include="media\1079\screenshot_1476663631.png" />
+    <Content Include="media\1079\screenshot_1476663631_225x400.png" />
+    <Content Include="media\1079\screenshot_1476663631_400.jpg" />
+    <Content Include="media\1079\screenshot_1476663631_400.png" />
+    <Content Include="media\1079\screenshot_1476663631_big-thumb.jpg" />
+    <Content Include="media\1079\screenshot_1476663631_big-thumb.png" />
+    <Content Include="media\1079\screenshot_1476663631_thumb.jpg" />
+    <Content Include="media\1079\screenshot_1476663631_thumb.png" />
+    <Content Include="media\1080\screenshot_1476663676.png" />
+    <Content Include="media\1080\screenshot_1476663676_225x400.png" />
+    <Content Include="media\1080\screenshot_1476663676_400.jpg" />
+    <Content Include="media\1080\screenshot_1476663676_400.png" />
+    <Content Include="media\1080\screenshot_1476663676_big-thumb.jpg" />
+    <Content Include="media\1080\screenshot_1476663676_big-thumb.png" />
+    <Content Include="media\1080\screenshot_1476663676_thumb.jpg" />
+    <Content Include="media\1080\screenshot_1476663676_thumb.png" />
+    <Content Include="media\1081\screenshot_1476663836.png" />
+    <Content Include="media\1081\screenshot_1476663836_225x400.png" />
+    <Content Include="media\1081\screenshot_1476663836_400.jpg" />
+    <Content Include="media\1081\screenshot_1476663836_400.png" />
+    <Content Include="media\1081\screenshot_1476663836_big-thumb.jpg" />
+    <Content Include="media\1081\screenshot_1476663836_big-thumb.png" />
+    <Content Include="media\1081\screenshot_1476663836_thumb.jpg" />
+    <Content Include="media\1081\screenshot_1476663836_thumb.png" />
+    <Content Include="media\Web.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -655,9 +684,11 @@
   <ItemGroup>
     <Compile Include="App_Start\MainApplication.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\MapTo.cs" />
     <Compile Include="Code\StringExtensions.cs" />
     <Compile Include="Code\UmbracoExtensions.cs" />
-    <Compile Include="Code\UmbracoToModel.cs" />
+    <Compile Include="Code\UmbracoViewModel\UmbracoFieldAnnotations.cs" />
+    <Compile Include="Code\UmbracoViewModel\UmbracoViewModel.cs" />
     <Compile Include="Controllers\API\JobsController.cs" />
     <Compile Include="Controllers\API\Base\MasterController.cs" />
     <Compile Include="Controllers\API\PageController.cs" />
@@ -698,7 +729,6 @@
     <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-    <Content Include="media\Web.config" />
     <Content Include="Config\UrlRewriting.config" />
     <Content Include="Config\umbracoSettings.config" />
     <Content Include="Config\tinyMceConfig.config" />

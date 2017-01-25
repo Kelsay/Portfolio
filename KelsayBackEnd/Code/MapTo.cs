@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Kelsay.Code
 {
-    public class UmbracoToModel<T>
+    public class MapTo
     {
     }
 }

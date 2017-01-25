@@ -3,6 +3,13 @@
 namespace Kelsay.Models
 {
 
+    public class PortfolioListModel
+    {
+        public List<PortfolioModel> Items = new List<PortfolioModel>();
+        public bool IsLast;
+        public int Start;
+    }
+
     public class PortfolioModel
     {
         public string Name;

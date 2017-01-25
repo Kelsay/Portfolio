@@ -20,7 +20,7 @@
             <div class="copy" ng-bind-html="portfolio.details.description | trusted"></div>
 
             <!-- List of images -->
-            <div class="col-md-3" ng-repeat="image in portfolio.details.images" ng-if="$index >= 1 || item.images.length <= 1" >
+            <div class="col-md-3" ng-repeat="image in portfolio.details.images" ng-if="$index >= 1 || item.images.length <= 1">
                 <img ng-src="{{image}}" />
             </div>
         </div>
@@ -42,3 +42,10 @@
         </div>
     </li>
 </ul>
+
+<div class="text-center" ng-click="portfolio.loadItems()" ng-show="portfolio.items.length > 0 && !portfolio.$finished">
+    <a class="btn btn-primary">
+        <icon class="loading-icon" ng-show="portfolio.$loading"></icon>
+        Load more ..
+    </a>
+</div>
